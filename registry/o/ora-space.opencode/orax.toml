@@ -7,5 +7,5 @@ description = "Ora Space OpenCode Agent"
 homepage = "https://github.com/ora-space/opencode-agent"
 license = "Apache-2.0"
 
-url = "https://github.com/ora-space/opencode-agent/releases/download/v0.1.0/ora-opencode.orax"
-sha256 = "896aab7238f93560bc8039510801008a8c5817c414551363f2a60b7a3750ab83"
+url = "https://github.com/ora-space/opencode-agent/releases/download/v0.1.1/ora-space.opencode-v0.1.1.orax"
+sha256 = "75354a9ffd749b0715ab7e6ddf540b2b84b09dd605fe15f23b4079feb68de889"
