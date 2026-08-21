@@ -2,10 +2,10 @@ resolver = 1
 name = "ora-space.opencode"
 namespace = "official"
 kind = "agent"
-version = "0.1.1"
+version = "0.1.2"
 description = "Ora Space OpenCode Agent"
 homepage = "https://github.com/ora-space/opencode-agent"
 license = "Apache-2.0"
 
-url = "https://github.com/ora-space/opencode-agent/releases/download/v0.1.1/ora-space.opencode-v0.1.1.orax"
-sha256 = "75354a9ffd749b0715ab7e6ddf540b2b84b09dd605fe15f23b4079feb68de889"
+url = "https://github.com/ora-space/opencode-agent/releases/download/v0.1.2/ora-space.opencode-v0.1.2.orax"
+sha256 = "18263de8e26fab1ea64d6c24913f0815d2151e0ae49cea9ef8aa46f453798558"
