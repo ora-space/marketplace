@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tavily">
+  <rect width="64" height="64" rx="12" fill="#0f172a"/>
+  <circle cx="28" cy="28" r="12" fill="none" stroke="#38bdf8" stroke-width="4"/>
+  <path d="M38 38 L52 52" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+</svg>
