@@ -1,5 +1,6 @@
 resolver = 1
-name = "ora-space.opencode"
+title = "OpenCode"
+identifier = "ora-space.opencode"
 namespace = "official"
 kind = "agent"
 version = "0.1.2"
