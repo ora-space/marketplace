@@ -1,0 +1,12 @@
+resolver = 1
+title = "Tavily"
+identifier = "ora-space.tavily-search"
+namespace = "official"
+kind = "mcp"
+version = "0.1.0"
+description = "Tavily web search MCP over Streamable HTTP"
+homepage = "https://github.com/ora-space/tavily-search-mcp"
+license = "Apache-2.0"
+
+url = "https://github.com/ora-space/tavily-search-mcp/releases/download/v0.1.0/ora-space.tavily-search-v0.1.0.orax"
+sha256 = "a8b58b0fc0a7c85fe774620682703149b4b6acbaa99303f399309558da282130"
