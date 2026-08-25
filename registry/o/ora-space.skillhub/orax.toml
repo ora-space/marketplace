@@ -1,0 +1,36 @@
+resolver = 1
+title = "SkillHub"
+identifier = "ora-space.skillhub"
+namespace = "official"
+kind = "webview"
+version = "0.1.0"
+description = "Ora Space SkillHub surface"
+homepage = "https://github.com/ora-space/ui-plugins"
+license = "Apache-2.0"
+url = "https://github.com/ora-space/ui-plugins/releases/download/skillhub/v0.1.0/ora-space.skillhub-v0.1.0.orax"
+sha256 = "1d3eaf6245001ac242b95d8c24d9e4dd93db61771cf4463be550c69845c73d0c"
+
+[webview]
+start_url = "https://www.skillhub.cn"
+allowed_origins = ["https://www.skillhub.cn","https://skillhub.cn"]
+
+[webview.downloads.fallback]
+reject = true
+
+[[webview.downloads.rules]]
+
+[webview.downloads.rules.page]
+origin = "https://www.skillhub.cn"
+path_prefix = "/"
+
+[webview.downloads.rules.action]
+prompt = ["import_skill","save_as"]
+
+[[webview.downloads.rules]]
+
+[webview.downloads.rules.page]
+origin = "https://skillhub.cn"
+path_prefix = "/"
+
+[webview.downloads.rules.action]
+prompt = ["import_skill","save_as"]
