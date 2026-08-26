@@ -1,5 +1,6 @@
 resolver = 1
-name = "ora-space.claude"
+title = "Codex"
+identifier = "ora-space.codex"
 namespace = "official"
 kind = "agent"
 version = "0.1.0"
