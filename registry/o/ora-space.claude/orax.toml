@@ -1,3 +1,4 @@
+resolver = 1
 name = "ora-space.claude"
 namespace = "official"
 kind = "agent"
