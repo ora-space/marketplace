@@ -1,0 +1,14 @@
+resolver = 1
+title = "RTK"
+identifier = "rtk-ai.rtk"
+namespace = "official"
+kind = "hook"
+version = "0.1.0"
+description = "RTK command rewrite hook"
+homepage = "https://github.com/rtk-ai/rtk"
+license = "Apache-2.0"
+
+[[targets]]
+target = "x86_64-pc-windows-msvc"
+url = "https://github.com/ora-space/rtk-hook-plugin/releases/download/v0.1.0/rtk-ai.rtk-v0.1.0-x86_64-pc-windows-msvc.orax"
+sha256 = "475f209c9ee975344cce972f449b4a35771b8f7c43bbe32c7ccf5a30f4882dbf"
