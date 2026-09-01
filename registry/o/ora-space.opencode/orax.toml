@@ -11,4 +11,4 @@ license = "Apache-2.0"
 [[targets]]
 target = "x86_64-pc-windows-msvc"
 url = "https://github.com/ora-space/opencode-agent/releases/download/v0.5.0/ora-space.opencode-v0.5.0-x86_64-pc-windows-msvc.orax"
-sha256 = "037047bb5d145a2000ee73a216b94d970c2ad4840430d5edb0e5b8af4bbbe656"
+sha256 = "d5651d0cba3d06563bddbbc77261120f9ff9304f87a5fb849d1da46cc2bcf40c"
