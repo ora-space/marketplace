@@ -3,22 +3,12 @@ title = "OpenCode"
 identifier = "ora-space.opencode"
 namespace = "official"
 kind = "agent"
-version = "0.4.0"
+version = "0.5.0"
 description = "Ora Space OpenCode Agent"
 homepage = "https://github.com/ora-space/opencode-agent"
 license = "Apache-2.0"
 
 [[targets]]
-target = "aarch64-apple-darwin"
-url = "https://github.com/ora-space/opencode-agent/releases/download/v0.4.0/ora-space.opencode-v0.4.0-aarch64-apple-darwin.orax"
-sha256 = "aeea3364562f8433398fe609eb66cec4057f7fae7407f4170d3649f7f521a170"
-
-[[targets]]
-target = "x86_64-unknown-linux-gnu"
-url = "https://github.com/ora-space/opencode-agent/releases/download/v0.4.0/ora-space.opencode-v0.4.0-x86_64-unknown-linux-gnu.orax"
-sha256 = "9127d8a1e8e2789b2966ba49b7f3d0fb35262137dd7bb07e01cbf9a829230b22"
-
-[[targets]]
 target = "x86_64-pc-windows-msvc"
-url = "https://github.com/ora-space/opencode-agent/releases/download/v0.4.0/ora-space.opencode-v0.4.0-x86_64-pc-windows-msvc.orax"
-sha256 = "8ac8eb98524e545999f845733121279cea190ca2f643e3ac0f8bafd12be4822a"
+url = "https://github.com/ora-space/opencode-agent/releases/download/v0.5.0/ora-space.opencode-v0.5.0-x86_64-pc-windows-msvc.orax"
+sha256 = "037047bb5d145a2000ee73a216b94d970c2ad4840430d5edb0e5b8af4bbbe656"
