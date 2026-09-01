@@ -1,0 +1,12 @@
+resolver = 1
+title = "Codex"
+identifier = "ora-space.codex"
+namespace = "official"
+kind = "agent"
+version = "0.1.0"
+description = "Ora Space Codex Agent"
+homepage = "https://github.com/ora-space/codex-agent"
+license = "Apache-2.0"
+
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.1.0/ora-space.codex-v0.1.0.orax"
+sha256 = "b8f99605fcf9f400b282062177295c4053547b7b7740c7d1a876e4439fc431e0"
