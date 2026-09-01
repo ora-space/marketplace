@@ -1,0 +1,12 @@
+resolver = 1
+title = "Matt Pocock Skills"
+identifier = "mattpocock.skills"
+namespace = "official"
+kind = "skill"
+version = "1.2.3"
+description = "Matt Pocock's skills for real engineering"
+homepage = "https://github.com/mattpocock/skills"
+license = "MIT"
+
+url = "https://github.com/ora-space/mattpocock-skill/releases/download/v1.2.3/mattpocock.skills-v1.2.3.orax"
+sha256 = "b5e97682f3e1ca21af1301cb22a8fb178b0de82776e916effaf97d6ae297d203"
