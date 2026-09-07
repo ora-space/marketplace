@@ -3,22 +3,22 @@ title = "Codex"
 identifier = "ora-space.codex"
 namespace = "official"
 kind = "agent"
-version = "0.3.2"
+version = "0.3.3"
 description = "Ora Space Codex Agent"
 homepage = "https://github.com/ora-space/codex-agent"
 license = "Apache-2.0"
 
 [[targets]]
 target = "x86_64-pc-windows-msvc"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.2/ora-space.codex-v0.3.2-x86_64-pc-windows-msvc.orax"
-sha256 = "77a8482b1d4e9fc5652497864ed24babc8cbd95e11b163a25974903f98c351a6"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.3/ora-space.codex-v0.3.3-x86_64-pc-windows-msvc.orax"
+sha256 = "68651ae1456f91ae54cb1431c465d4900d2cb20b034c59d8747c487e0aa3e111"
 
 [[targets]]
 target = "aarch64-apple-darwin"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.2/ora-space.codex-v0.3.2-aarch64-apple-darwin.orax"
-sha256 = "ce4324bf977e349212325143610e052cab849a6f1c87bd5d04236d5b8350d4ad"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.3/ora-space.codex-v0.3.3-aarch64-apple-darwin.orax"
+sha256 = "b7bc072e799f9d7809bd45898b750404b91edf2262904904d40e4cb1e0207384"
 
 [[targets]]
 target = "x86_64-unknown-linux-gnu"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.2/ora-space.codex-v0.3.2-x86_64-unknown-linux-gnu.orax"
-sha256 = "749e7ffd7e2e4f84070c476136b8dafd36329011c3b754df4a31a5713f67ef7e"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.3/ora-space.codex-v0.3.3-x86_64-unknown-linux-gnu.orax"
+sha256 = "6949bb7e3b05340b35c2a5f8fa923b8a17a89f204a4ee2ca2551981b34b516cb"
