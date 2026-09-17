@@ -1,0 +1,8 @@
+﻿resolver = 1
+identifier = "ora-space.python-core"
+kind = "skill"
+version = "1.0.0"
+description = "Python core development skill"
+marketplace_visible = false
+url = "https://raw.githubusercontent.com/sunSUNQ/ora-marketplace/main/artifacts/ora-space.python-core-v1.0.0.orax"
+sha256 = "57f0ebc7a071e6c4a2f6a2b3688990d02227317b9cf4e39dbed126ee4d826816"

@@ -1,0 +1,7 @@
+﻿resolver = 1
+identifier = "ora-space.python-mcp"
+kind = "mcp"
+version = "1.0.0"
+description = "Python MCP server for Python development"
+url = "https://raw.githubusercontent.com/sunSUNQ/ora-marketplace/main/artifacts/ora-space.python-mcp-v1.0.0.orax"
+sha256 = "82587909c5785756b3c55004c703e2d615d5f01047f7e11a8f55e4cf937f774c"
