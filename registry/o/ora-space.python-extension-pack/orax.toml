@@ -1,0 +1,16 @@
+﻿resolver = 1
+identifier = "ora-space.python-extension-pack"
+title = "Python Extension Pack"
+kind = "pack"
+version = "0.1.0"
+description = "Python development pack with skill, MCP server, and agent tools"
+
+[[pack.members]]
+identifier = "ora-space.python-core"
+
+[[pack.members]]
+identifier = "ora-space.python-mcp"
+
+[[pack.members]]
+identifier = "ora-space.python-claude-agent"
+agents = ["ora-space.claude"]
