@@ -3,22 +3,22 @@ title = "Claude Code"
 identifier = "ora-space.claude"
 namespace = "official"
 kind = "agent"
-version = "0.3.8"
+version = "0.3.13"
 description = "Ora Space Claude Code Agent"
 homepage = "https://github.com/ora-space/claude-code-agent"
 license = "Apache-2.0"
 
 [[targets]]
 target = "x86_64-pc-windows-msvc"
-url = "https://github.com/ora-space/claude-code-agent/releases/download/v0.3.8/ora-space.claude-v0.3.8-x86_64-pc-windows-msvc.orax"
-sha256 = "cb150bea76a5fa672091de62c2022b0695c5f841a594074b759e218df4b7fa4b"
+url = "https://github.com/ora-space/claude-code-agent/releases/download/v0.3.13/ora-space.claude-v0.3.13-x86_64-pc-windows-msvc.orax"
+sha256 = "4c83e56b5b220151a9a9f3d72498c2045fb51f08eaabf64ef695e6c803b070eb"
 
 [[targets]]
 target = "aarch64-apple-darwin"
-url = "https://github.com/ora-space/claude-code-agent/releases/download/v0.3.8/ora-space.claude-v0.3.8-aarch64-apple-darwin.orax"
-sha256 = "5201594d0b1d7f215a697c324d6bf2653afd534e34819902f58219d7ffd9a2e9"
+url = "https://github.com/ora-space/claude-code-agent/releases/download/v0.3.13/ora-space.claude-v0.3.13-aarch64-apple-darwin.orax"
+sha256 = "090cf9fde73a6bd660ccb48df589fcc3a69be40f30d522f959d53e25570cb641"
 
 [[targets]]
 target = "x86_64-unknown-linux-gnu"
-url = "https://github.com/ora-space/claude-code-agent/releases/download/v0.3.8/ora-space.claude-v0.3.8-x86_64-unknown-linux-gnu.orax"
-sha256 = "d8f85f7a09973117d0b7c8192935f276c613731c35d770be55e939e5e866457a"
+url = "https://github.com/ora-space/claude-code-agent/releases/download/v0.3.13/ora-space.claude-v0.3.13-x86_64-unknown-linux-gnu.orax"
+sha256 = "fc752b89a2b483d450167cd6f623e20c01710c2b3d939cd6e40e5fd7e295658e"
