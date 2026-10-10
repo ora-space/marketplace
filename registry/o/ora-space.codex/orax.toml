@@ -3,27 +3,27 @@ title = "Codex"
 identifier = "ora-space.codex"
 namespace = "official"
 kind = "agent"
-version = "0.3.14"
+version = "0.3.15"
 description = "Ora Space Codex Agent"
 homepage = "https://github.com/ora-space/codex-agent"
 license = "Apache-2.0"
 
 [[targets]]
 target = "x86_64-pc-windows-msvc"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-x86_64-pc-windows-msvc.orax"
-sha256 = "1ec90aed062f130ad29d2886ae86bcfb3742b987346d960306d672135d16fbc6"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.15/ora-space.codex-v0.3.15-x86_64-pc-windows-msvc.orax"
+sha256 = "4728aadbbfe9ca7a85077ab71f24c7000e74b84da0c363f5766c94abf52032a8"
 
 [[targets]]
 target = "aarch64-apple-darwin"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-aarch64-apple-darwin.orax"
-sha256 = "d67c234f96aaf23fd3271201481b8a8e581f1b6e8e373c592ad4494ed5e1b362"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.15/ora-space.codex-v0.3.15-aarch64-apple-darwin.orax"
+sha256 = "cb8081b5e4dad707433bf55f7860c850ec231329112cd4d26394a2360a2edfe4"
 
 [[targets]]
 target = "x86_64-unknown-linux-gnu"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-x86_64-unknown-linux-gnu.orax"
-sha256 = "a32b463a1a677e932bf1eca075bf8def0aa4a5254e2c42e459e180bd601d8b03"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.15/ora-space.codex-v0.3.15-x86_64-unknown-linux-gnu.orax"
+sha256 = "66d4124808e6a189fc6fcaff5697a8fbfb779a88794a14d3c4aa2bc6184b4ecc"
 
 [[targets]]
 target = "aarch64-unknown-linux-gnu"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-aarch64-unknown-linux-gnu.orax"
-sha256 = "75384d334795204bb846db770ea6d71e2b790418ad90c0832198108922f8185f"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.15/ora-space.codex-v0.3.15-aarch64-unknown-linux-gnu.orax"
+sha256 = "c8d5570df8846b441b7d40a9117cc56f25e9c3319df054078d95f6fe87534ede"
