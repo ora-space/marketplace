@@ -3,27 +3,27 @@ title = "OpenCode"
 identifier = "ora-space.opencode"
 namespace = "official"
 kind = "agent"
-version = "0.6.8"
+version = "0.6.11"
 description = "Ora Space OpenCode Agent"
 homepage = "https://github.com/ora-space/opencode-agent"
 license = "Apache-2.0"
 
 [[targets]]
 target = "aarch64-apple-darwin"
-url = "https://github.com/ora-space/opencode-agent/releases/download/v0.6.8/ora-space.opencode-v0.6.8-aarch64-apple-darwin.orax"
-sha256 = "5a6789c4ffbedae0dc7b578e08dc5b295d232d27af01e23b7fe7c3f43e5251d1"
+url = "https://github.com/ora-space/opencode-agent/releases/download/v0.6.11/ora-space.opencode-v0.6.11-aarch64-apple-darwin.orax"
+sha256 = "f1535c926e256172bba6ff12465a9fd2cd6385345ce8f1543481bff1630639ce"
 
 [[targets]]
 target = "x86_64-unknown-linux-gnu"
-url = "https://github.com/ora-space/opencode-agent/releases/download/v0.6.8/ora-space.opencode-v0.6.8-x86_64-unknown-linux-gnu.orax"
-sha256 = "6ff11cbe9d6118f058d0efe4e3ffd6c93e429016df691335fc76c02789c5bdec"
+url = "https://github.com/ora-space/opencode-agent/releases/download/v0.6.11/ora-space.opencode-v0.6.11-x86_64-unknown-linux-gnu.orax"
+sha256 = "88c00f81997fc7fe892f2d58a686f535678e562c7e000d33eb7ee3b1d0f754b5"
 
 [[targets]]
 target = "aarch64-unknown-linux-gnu"
-url = "https://github.com/ora-space/opencode-agent/releases/download/v0.6.8/ora-space.opencode-v0.6.8-aarch64-unknown-linux-gnu.orax"
-sha256 = "98dbe80b5ea568e049ef72e80ed1777b2ad65351f9d0d4b630d2128e7b50dc78"
+url = "https://github.com/ora-space/opencode-agent/releases/download/v0.6.11/ora-space.opencode-v0.6.11-aarch64-unknown-linux-gnu.orax"
+sha256 = "41f58c82f343153f23771f7f314c22212145b3dcf039451b5a869dba24894547"
 
 [[targets]]
 target = "x86_64-pc-windows-msvc"
-url = "https://github.com/ora-space/opencode-agent/releases/download/v0.6.8/ora-space.opencode-v0.6.8-x86_64-pc-windows-msvc.orax"
-sha256 = "0d8a9d39d908a3253febda277ba57cd8ece8ec15bb4283c3433a7172130cda34"
+url = "https://github.com/ora-space/opencode-agent/releases/download/v0.6.11/ora-space.opencode-v0.6.11-x86_64-pc-windows-msvc.orax"
+sha256 = "09ec3f9c323ef368f298df290da82a834c31fbe483f4d707a745273983c74ed5"
