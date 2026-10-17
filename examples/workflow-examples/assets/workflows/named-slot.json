@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "name": "Named Executor Slot",
+  "version": "0.1.0",
+  "description": "演示执行器槽位：Agent 声明自己需要 writer 槽位。运行者未配置时会收到带槽位名、说明和节点 id 的拒绝；配置后同一份快照即可运行。",
+  "viewport": {
+    "x": 0,
+    "y": 0,
+    "zoom": 1
+  },
+  "executorSlots": [
+    {
+      "name": "writer",
+      "description": "负责改写与润色发布说明的执行器，需要较好的中文写作能力。",
+      "hint": {
+        "agentCli": "official/ora-space.opencode",
+        "modelId": "anthropic/claude-sonnet"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "type": "workflow",
+      "position": {
+        "x": 80,
+        "y": 200
+      },
+      "data": {
+        "kind": "start",
+        "title": "开始",
+        "description": "",
+        "inputVariables": [
+          {
+            "name": "note",
+            "displayName": "发布说明草稿",
+            "fieldType": "paragraph",
+            "valueType": "string",
+            "required": true,
+            "value": "我们发布了 Ora 0.1，新增工作流编排。"
+          }
+        ]
+      },
+      "deletable": false
+    },
+    {
+      "id": "polish",
+      "type": "workflow",
+      "position": {
+        "x": 400,
+        "y": 200
+      },
+      "data": {
+        "kind": "agent",
+        "title": "Agent：润色",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "executorSlot": "writer",
+          "prompt": "请把下面的发布说明改写成更清晰、更简短的中文，只输出改写结果，不要解释，不要使用 Markdown，不要调用工具：\n\n{{#start.note#}}"
+        }
+      }
+    },
+    {
+      "id": "output",
+      "type": "workflow",
+      "position": {
+        "x": 720,
+        "y": 200
+      },
+      "data": {
+        "kind": "output",
+        "title": "输出",
+        "description": "",
+        "outputs": [
+          {
+            "name": "result",
+            "variableSelector": [
+              "polish",
+              "output"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-start-polish",
+      "type": "workflow",
+      "source": "start",
+      "target": "polish"
+    },
+    {
+      "id": "e-polish-output",
+      "type": "workflow",
+      "source": "polish",
+      "target": "output"
+    }
+  ],
+  "annotations": [],
+  "globalVariables": []
+}

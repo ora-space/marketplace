@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "name": "Hello Agent",
+  "version": "0.1.0",
+  "description": "最小示例：Start 接收一个主题，交给 default 槽位的 Agent 起草一句发布说明，再由 Output 收集结果。运行者只需配置个人默认执行器。",
+  "viewport": {
+    "x": 0,
+    "y": 0,
+    "zoom": 1
+  },
+  "nodes": [
+    {
+      "id": "start",
+      "type": "workflow",
+      "position": {
+        "x": 80,
+        "y": 200
+      },
+      "data": {
+        "kind": "start",
+        "title": "开始",
+        "description": "",
+        "inputVariables": [
+          {
+            "name": "topic",
+            "displayName": "主题",
+            "fieldType": "text-input",
+            "valueType": "string",
+            "required": true,
+            "value": "Ora 0.1 发布"
+          }
+        ]
+      },
+      "deletable": false
+    },
+    {
+      "id": "write",
+      "type": "workflow",
+      "position": {
+        "x": 400,
+        "y": 200
+      },
+      "data": {
+        "kind": "agent",
+        "title": "Agent：起草",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "prompt": "你是一名技术写作者。请围绕下面的主题写一句不超过 40 个字的中文发布说明，只输出这一句，不要解释，不要使用 Markdown，不要调用工具：\n{{#start.topic#}}"
+        }
+      }
+    },
+    {
+      "id": "output",
+      "type": "workflow",
+      "position": {
+        "x": 720,
+        "y": 200
+      },
+      "data": {
+        "kind": "output",
+        "title": "输出",
+        "description": "",
+        "outputs": [
+          {
+            "name": "result",
+            "variableSelector": [
+              "write",
+              "output"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-start-write",
+      "type": "workflow",
+      "source": "start",
+      "target": "write"
+    },
+    {
+      "id": "e-write-output",
+      "type": "workflow",
+      "source": "write",
+      "target": "output"
+    }
+  ],
+  "annotations": [],
+  "globalVariables": []
+}
