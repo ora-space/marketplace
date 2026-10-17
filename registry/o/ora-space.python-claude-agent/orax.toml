@@ -1,0 +1,7 @@
+﻿resolver = 1
+identifier = "ora-space.python-claude-agent"
+kind = "agent"
+version = "1.0.0"
+description = "Python Claude agent for Python development"
+url = "https://raw.githubusercontent.com/sunSUNQ/ora-marketplace/main/artifacts/ora-space.python-claude-agent-v1.0.0.orax"
+sha256 = "2d4f869735b5755b485fba923495a3cdb538a92fc203d996231729ad39e4e069"
