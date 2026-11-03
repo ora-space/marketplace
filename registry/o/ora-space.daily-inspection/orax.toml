@@ -1,0 +1,12 @@
+resolver = 1
+title = "Daily Inspection"
+identifier = "ora-space.daily-inspection"
+namespace = "official"
+kind = "workflow"
+version = "0.1.0"
+description = "A read-only daily inspection workflow that checks a project and produces a Markdown report."
+homepage = "https://github.com/ora-space/marketplace"
+license = "Apache-2.0"
+
+url = "https://raw.githubusercontent.com/ora-space/marketplace/aa571dbf63bd709dc500f78341334c4ff9c8ca4b/examples/daily-inspection/dist/ora-space.daily-inspection-0.1.0.orax"
+sha256 = "0894688ace928fe0e0af18a1e1aa31c1d0866626b7220b85c17583aef414c05b"
