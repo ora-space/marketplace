@@ -1,0 +1,6 @@
+# The package archive is built from the working tree, so its inputs must not
+# depend on the platform's line-ending settings.
+*.toml text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.md text eol=lf
