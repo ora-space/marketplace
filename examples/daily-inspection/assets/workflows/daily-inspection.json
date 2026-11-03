@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "name": "每日巡检",
+  "version": "0.1.0",
+  "description": "只读检查项目服务与资源，输出每日巡检报告，不执行修复。",
+  "viewport": {
+    "x": 30,
+    "y": 100,
+    "zoom": 0.65
+  },
+  "nodes": [
+    {
+      "id": "start",
+      "type": "workflow",
+      "position": {
+        "x": 0,
+        "y": 100
+      },
+      "data": {
+        "kind": "start",
+        "title": "开始：每日巡检",
+        "description": ""
+      },
+      "deletable": false
+    },
+    {
+      "id": "inspect",
+      "type": "workflow",
+      "position": {
+        "x": 340,
+        "y": 100
+      },
+      "data": {
+        "kind": "agent",
+        "title": "检查服务与资源",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "prompt": "只读巡检当前项目中的演示服务。先查看 README 和可用的服务配置、指标与日志，再运行项目已有的只读巡检脚本；如果某项文件或命令不存在，明确写出缺失项，不要编造指标。不要访问外网、改动配置或修复系统。下面是巡检要求：{{#start.input#}}\n逐项列出实际观察到的服务状态、错误率、磁盘和备份信息，不把示例数据说成生产环境状态。",
+          "interactive": false,
+          "mcps": [],
+          "roleId": "",
+          "skills": []
+        }
+      }
+    },
+    {
+      "id": "report",
+      "type": "workflow",
+      "position": {
+        "x": 680,
+        "y": 100
+      },
+      "data": {
+        "kind": "agent",
+        "title": "汇总风险与巡检报告",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "prompt": "根据上一步的实际巡检证据生成中文 Markdown 报告，含总体结论、检查项表格、实际指标、异常与处置建议。最终助手回复必须直接包含完整报告正文，让用户在运行结果中就能读到；不要只回复文件路径或完成通知。整个步骤只读，不创建或修改任何文件，不执行修复，不编造未采集的指标。\n巡检证据：{{#inspect.output#}}",
+          "interactive": false,
+          "mcps": [],
+          "roleId": "",
+          "skills": []
+        }
+      }
+    },
+    {
+      "id": "output",
+      "type": "workflow",
+      "position": {
+        "x": 1020,
+        "y": 100
+      },
+      "data": {
+        "kind": "output",
+        "title": "输出",
+        "description": "",
+        "outputs": [
+          {
+            "name": "report",
+            "variableSelector": [
+              "report",
+              "output"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "start-inspect",
+      "type": "workflow",
+      "source": "start",
+      "target": "inspect"
+    },
+    {
+      "id": "inspect-report",
+      "type": "workflow",
+      "source": "inspect",
+      "target": "report"
+    },
+    {
+      "id": "report-output",
+      "type": "workflow",
+      "source": "report",
+      "target": "output"
+    }
+  ],
+  "annotations": [],
+  "globalVariables": []
+}
