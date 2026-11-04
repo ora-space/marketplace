@@ -8,5 +8,5 @@ description = "Red-green-refactor guidance with behavior-focused tests, seam sel
 homepage = "https://github.com/mattpocock/skills"
 license = "MIT"
 
-url = "https://raw.githubusercontent.com/wanglongan587/marketplace/e511702e0f36fbaf9714da972e80feb57ae0cd99/examples/top-skills/dist/top-skills.tdd-1.0.0.orax"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/e511702e0f36fbaf9714da972e80feb57ae0cd99/examples/top-skills/dist/top-skills.tdd-1.0.0.orax"
 sha256 = "fb90bde549d669e6391f64ef12a43a768361c68612b25a6690ed71499f09b570"

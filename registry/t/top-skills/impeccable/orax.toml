@@ -8,5 +8,5 @@ description = "Frontend design and UX quality workflow for shaping, reviewing, p
 homepage = "https://github.com/pbakaus/impeccable"
 license = "Apache-2.0"
 
-url = "https://raw.githubusercontent.com/wanglongan587/marketplace/e511702e0f36fbaf9714da972e80feb57ae0cd99/examples/top-skills/dist/top-skills.impeccable-1.0.0.orax"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/e511702e0f36fbaf9714da972e80feb57ae0cd99/examples/top-skills/dist/top-skills.impeccable-1.0.0.orax"
 sha256 = "44cbf8a844a13b86ab1918143f2bd87f7d96a7f25753a2f3042b116923f9684c"

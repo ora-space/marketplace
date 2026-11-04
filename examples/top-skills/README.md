@@ -27,6 +27,18 @@ Repositories that merely carry a `SKILL.md` as an ancillary file, or whose
 license does not allow redistribution, are excluded. Stars are a snapshot,
 not a live feed.
 
+Notable exclusions from the same snapshot:
+
+- `morluto/rea` (428,224 stars): the repository primarily ships the REA
+  application and MCP server; its `.agents/skills` directory is internal
+  product guidance rather than a portable skill package.
+- `anthropics/skills` (187,199 stars): GitHub reports no repository license,
+  so its contents cannot be redistributed here.
+- `career-ops-hq/career-ops` (79,967 stars): its skill expects the repository's
+  root `AGENTS.md`, `modes/` and runtime files, so extracting only the selected
+  skill directory would produce an installable but non-working package.
+  `blader/humanizer` is the next self-contained, licensed skill repository.
+
 ## Build
 
 ```sh
@@ -45,6 +57,10 @@ python3 tools/build.py \
 
 `--check` rebuilds every archive and verifies both the committed archive digest
 and the digest in each registry listing.
+
+Registry artifacts are pinned to the commit that added them. Merge this change
+with a merge commit so that commit remains reachable from `main`; squash and
+rebase merges would break the pinned raw URLs.
 
 ## Licensing
 

@@ -8,5 +8,5 @@ description = "Create validated architecture, sequence, lifecycle, ERD, class, w
 homepage = "https://github.com/tt-a1i/archify"
 license = "Apache-2.0"
 
-url = "https://raw.githubusercontent.com/wanglongan587/marketplace/e511702e0f36fbaf9714da972e80feb57ae0cd99/examples/top-skills/dist/top-skills.archify-1.0.0.orax"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/e511702e0f36fbaf9714da972e80feb57ae0cd99/examples/top-skills/dist/top-skills.archify-1.0.0.orax"
 sha256 = "9355469ac9a17cc15c16e1e8888379cabe558263c9e78e8d3e3af26eeb146193"
