@@ -6,6 +6,8 @@ from __future__ import annotations
 import sys
 import tempfile
 import unittest
+import zipfile
+from io import BytesIO
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -32,6 +34,26 @@ class CatalogTests(unittest.TestCase):
             (root / "link").symlink_to(root / "target")
             with self.assertRaises(ValueError):
                 build.validate_tree(root)
+
+    def test_archive_skill_names_reads_direct_skill_directories(self) -> None:
+        payload = BytesIO()
+        with zipfile.ZipFile(payload, "w") as archive:
+            archive.writestr(
+                "assets/Review/SKILL.md",
+                "---\nname: Review\ndescription: test\n---\n",
+            )
+            archive.writestr("assets/not-a-skill/README.md", "ignored")
+        self.assertEqual({"review"}, build.archive_skill_names(payload.getvalue()))
+
+    def test_archive_skill_names_rejects_nested_skills(self) -> None:
+        payload = BytesIO()
+        with zipfile.ZipFile(payload, "w") as archive:
+            archive.writestr(
+                "assets/group/review/SKILL.md",
+                "---\nname: review\ndescription: test\n---\n",
+            )
+        with self.assertRaises(ValueError):
+            build.archive_skill_names(payload.getvalue())
 
 
 if __name__ == "__main__":

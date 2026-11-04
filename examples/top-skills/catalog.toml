@@ -47,6 +47,7 @@ commit = "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
 stars = 144899
 skill_path = ".claude/skills/ui-ux-pro-max"
 license_files = ["LICENSE"]
+exclude = ["scripts/tests/**", "scripts/validate_data.py"]
 
 [[packages]]
 slug = "caveman"
@@ -107,6 +108,7 @@ commit = "a4065941f12be7967436261d9934784e381d423c"
 stars = 93234
 skill_path = "archify"
 license_files = ["LICENSE", "LICENSE-MIT", "NOTICE"]
+exclude = ["examples/*.html", "examples/locales/**"]
 
 [[packages]]
 slug = "diagram-design"
@@ -138,6 +140,7 @@ stars = 64540
 skill_path = "."
 asset_name = "humanizer"
 license_files = ["LICENSE"]
+exclude = [".github/**", ".claude-plugin/**", ".cursor-plugin/**", "AGENTS.md", "CHANGELOG.md", "scripts/**"]
 
 [[packages]]
 slug = "copywriting"
@@ -153,3 +156,4 @@ commit = "88c79f6528a9347420e57ceb1fff9a60de651768"
 stars = 58383
 skill_path = "skills/copywriting"
 license_files = ["LICENSE"]
+exclude = ["evals/**"]

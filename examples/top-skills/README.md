@@ -49,7 +49,7 @@ python3 tools/build.py
 ```
 
 With `--write-registry`, the builder also writes the corresponding
-`registry/t/top-skills/<slug>/orax.toml` and README files. The URL base must
+`registry/t/top-skills.<slug>/orax.toml` and README files. The URL base must
 point at the commit that contains the archives:
 
 ```sh
@@ -64,6 +64,16 @@ and the digest in each registry listing.
 Registry artifacts are pinned to the commit that added them. Merge this change
 with a merge commit so that commit remains reachable from `main`; squash and
 rebase merges would break the pinned raw URLs.
+
+The builder refuses to publish when a contributed Skill name collides with a
+Skill already published by another registry package. It verifies the existing
+archive SHA-256 before reading its `assets/<skill>/SKILL.md` names.
+
+Packaging also removes upstream-only material that is not used by the selected
+skill: archify's pre-rendered example HTML and localized example pages,
+copywriting's evals, humanizer's repository metadata and maintenance scripts,
+and UI/UX Pro Max's test suite and data validator. The excluded path patterns
+are recorded in each package's `SOURCE.json`.
 
 ## Licensing
 
