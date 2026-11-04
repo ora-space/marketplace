@@ -1,0 +1,155 @@
+snapshot_date = "2026-11-04"
+snapshot_at = "2026-11-04T07:33:33Z"
+namespace = "official"
+packager = "Ora Space"
+
+[[packages]]
+slug = "brainstorming"
+identifier = "top-skills.brainstorming"
+title = "Brainstorming"
+version = "1.0.0"
+description = "Structured discovery before creative work: clarify the goal, compare approaches, and get design approval before implementation. From obra/superpowers."
+homepage = "https://github.com/obra/superpowers"
+license = "MIT"
+repository = "obra/superpowers"
+author = "obra"
+commit = "22f0b463e7a5e579904dd6211a520321035526f7"
+stars = 312020
+skill_path = "skills/brainstorming"
+license_files = ["LICENSE"]
+
+[[packages]]
+slug = "ponytail"
+identifier = "top-skills.ponytail"
+title = "Ponytail"
+version = "1.0.0"
+description = "Lazy senior developer mode for the smallest complete change, less over-engineering, and a concise human-readable answer. From DietrichGebert/ponytail."
+homepage = "https://github.com/DietrichGebert/ponytail"
+license = "MIT"
+repository = "DietrichGebert/ponytail"
+author = "Dietrich Gebert"
+commit = "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
+stars = 183961
+skill_path = "skills/ponytail"
+license_files = ["LICENSE"]
+
+[[packages]]
+slug = "ui-ux-pro-max"
+identifier = "top-skills.ui-ux-pro-max"
+title = "UI/UX Pro Max"
+version = "1.0.0"
+description = "Searchable UI/UX design intelligence for layout, typography, color, motion, accessibility, charts, and 22 technology stacks. From nextlevelbuilder/ui-ux-pro-max-skill."
+homepage = "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+license = "MIT"
+repository = "nextlevelbuilder/ui-ux-pro-max-skill"
+author = "nextlevelbuilder"
+commit = "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+stars = 144899
+skill_path = ".claude/skills/ui-ux-pro-max"
+license_files = ["LICENSE"]
+
+[[packages]]
+slug = "caveman"
+identifier = "top-skills.caveman"
+title = "Caveman"
+version = "1.0.0"
+description = "Terse caveman voice that keeps every technical fact while removing filler and reducing output tokens. From JuliusBrussee/caveman."
+homepage = "https://github.com/JuliusBrussee/caveman"
+license = "Apache-2.0"
+repository = "JuliusBrussee/caveman"
+author = "Julius Brussee"
+commit = "2e068f735253cce28256744804785f01887d9646"
+stars = 117314
+skill_path = "skills/caveman"
+license_files = ["LICENSE", "LICENSE-MIT", "NOTICE"]
+
+[[packages]]
+slug = "code-review-and-quality"
+identifier = "top-skills.code-review-and-quality"
+title = "Code Review and Quality"
+version = "1.0.0"
+description = "Multi-axis code review before merge, covering correctness, design, tests, security, performance, and maintainability. From addyosmani/agent-skills."
+homepage = "https://github.com/addyosmani/agent-skills"
+license = "MIT"
+repository = "addyosmani/agent-skills"
+author = "Addy Osmani"
+commit = "301b02b12bff98e4688e6984af6556802322bbde"
+stars = 113117
+skill_path = "skills/code-review-and-quality"
+license_files = ["LICENSE"]
+
+[[packages]]
+slug = "impeccable"
+identifier = "top-skills.impeccable"
+title = "Impeccable"
+version = "1.0.0"
+description = "Frontend design and UX quality workflow for shaping, reviewing, polishing, hardening, animating, and documenting interfaces. From pbakaus/impeccable."
+homepage = "https://github.com/pbakaus/impeccable"
+license = "Apache-2.0"
+repository = "pbakaus/impeccable"
+author = "Paul Bakaus"
+commit = "f864521bbb1c9350e8f6cf7742c139a04a1020af"
+stars = 101823
+skill_path = ".agents/skills/impeccable"
+license_files = ["LICENSE", "NOTICE.md"]
+
+[[packages]]
+slug = "archify"
+identifier = "top-skills.archify"
+title = "Archify"
+version = "1.0.0"
+description = "Create validated architecture, sequence, lifecycle, ERD, class, workflow, and other diagrams as standalone interactive HTML. From tt-a1i/archify."
+homepage = "https://github.com/tt-a1i/archify"
+license = "Apache-2.0"
+repository = "tt-a1i/archify"
+author = "tt-a1i"
+commit = "a4065941f12be7967436261d9934784e381d423c"
+stars = 93234
+skill_path = "archify"
+license_files = ["LICENSE", "LICENSE-MIT", "NOTICE"]
+
+[[packages]]
+slug = "diagram-design"
+identifier = "top-skills.diagram-design"
+title = "Diagram Design"
+version = "1.0.0"
+description = "Editorial HTML/SVG diagram design across architecture, flow, sequence, lifecycle, data, charts, and many other diagram types. From cathrynlavery/diagram-design."
+homepage = "https://github.com/cathrynlavery/diagram-design"
+license = "MIT"
+repository = "cathrynlavery/diagram-design"
+author = "Cathryn Lavery"
+commit = "f24d98b05e2d7a5e68c2dedfe46e5b7173f50118"
+stars = 64786
+skill_path = "skills/diagram-design"
+license_files = ["LICENSE"]
+
+[[packages]]
+slug = "humanizer"
+identifier = "top-skills.humanizer"
+title = "Humanizer"
+version = "1.0.0"
+description = "Rewrite AI-generated prose into natural, varied writing while preserving facts and intent. From blader/humanizer."
+homepage = "https://github.com/blader/humanizer"
+license = "MIT"
+repository = "blader/humanizer"
+author = "blader"
+commit = "0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0"
+stars = 64540
+skill_path = "."
+asset_name = "humanizer"
+license_files = ["LICENSE"]
+
+[[packages]]
+slug = "copywriting"
+identifier = "top-skills.copywriting"
+title = "Copywriting"
+version = "1.0.0"
+description = "Write, rewrite, or improve marketing copy for homepages, landing pages, pricing pages, feature pages, and product pages. From coreyhaines31/marketingskills."
+homepage = "https://github.com/coreyhaines31/marketingskills"
+license = "MIT"
+repository = "coreyhaines31/marketingskills"
+author = "Corey Haines"
+commit = "88c79f6528a9347420e57ceb1fff9a60de651768"
+stars = 58383
+skill_path = "skills/copywriting"
+license_files = ["LICENSE"]

@@ -1,0 +1,12 @@
+resolver = 1
+title = "Diagram Design"
+identifier = "top-skills.diagram-design"
+namespace = "official"
+kind = "skill"
+version = "1.0.0"
+description = "Editorial HTML/SVG diagram design across architecture, flow, sequence, lifecycle, data, charts, and many other diagram types. From cathrynlavery/diagram-design."
+homepage = "https://github.com/cathrynlavery/diagram-design"
+license = "MIT"
+
+url = "https://raw.githubusercontent.com/ora-space/marketplace/f25752f9c953eb1add3966ff2843c2f5b41912d9/examples/top-skills/dist/top-skills.diagram-design-1.0.0.orax"
+sha256 = "25b98a08889427117066181744cec1d252efaa8ae9a9d17e8c57f89c547c6899"
