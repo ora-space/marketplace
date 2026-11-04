@@ -8,5 +8,5 @@ description = "Multi-axis code review before merge, covering correctness, design
 homepage = "https://github.com/addyosmani/agent-skills"
 license = "MIT"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/f25752f9c953eb1add3966ff2843c2f5b41912d9/examples/top-skills/dist/top-skills.code-review-and-quality-1.0.0.orax"
-sha256 = "4d3258413e0e5db9559534ae41ca1ec26b0e40914f2c8dfaea6a3930cf160324"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/d9c6c299c831093c79fbc4c86a13a0c2460a7e0e/examples/top-skills/dist/top-skills.code-review-and-quality-1.0.0.orax"
+sha256 = "beab5808853592dff8e620693c9491f40fea9bb2b3dead8e41ef4888f9299769"

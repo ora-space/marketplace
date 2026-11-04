@@ -8,5 +8,5 @@ description = "Rewrite AI-generated prose into natural, varied writing while pre
 homepage = "https://github.com/blader/humanizer"
 license = "MIT"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/f25752f9c953eb1add3966ff2843c2f5b41912d9/examples/top-skills/dist/top-skills.humanizer-1.0.0.orax"
-sha256 = "1a3153fdfb59a90d91103d95ca44694b63af802adafaeba6e61d43f42da42bb0"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/d9c6c299c831093c79fbc4c86a13a0c2460a7e0e/examples/top-skills/dist/top-skills.humanizer-1.0.0.orax"
+sha256 = "176e6ca29642ca59eefc5bc811b0674a58ca93e7a9f5ec828efb2e15102fdd24"

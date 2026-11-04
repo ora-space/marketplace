@@ -8,5 +8,5 @@ description = "Editorial HTML/SVG diagram design across architecture, flow, sequ
 homepage = "https://github.com/cathrynlavery/diagram-design"
 license = "MIT"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/f25752f9c953eb1add3966ff2843c2f5b41912d9/examples/top-skills/dist/top-skills.diagram-design-1.0.0.orax"
-sha256 = "25b98a08889427117066181744cec1d252efaa8ae9a9d17e8c57f89c547c6899"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/d9c6c299c831093c79fbc4c86a13a0c2460a7e0e/examples/top-skills/dist/top-skills.diagram-design-1.0.0.orax"
+sha256 = "7e6ff770ed61b377ccd8108bb870e3f24ea8bedccc8ad0114ba248835f4f1621"

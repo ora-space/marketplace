@@ -8,5 +8,5 @@ description = "Terse caveman voice that keeps every technical fact while removin
 homepage = "https://github.com/JuliusBrussee/caveman"
 license = "Apache-2.0"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/f25752f9c953eb1add3966ff2843c2f5b41912d9/examples/top-skills/dist/top-skills.caveman-1.0.0.orax"
-sha256 = "da1d93f61499c56a15611fbdf0bbf8f394873009a90af92d0876d6a0e19caacf"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/d9c6c299c831093c79fbc4c86a13a0c2460a7e0e/examples/top-skills/dist/top-skills.caveman-1.0.0.orax"
+sha256 = "cfa27d8879df6f98b675161179500f1add4bf3e0701d9410bc738864a18020c3"

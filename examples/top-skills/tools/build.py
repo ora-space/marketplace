@@ -85,7 +85,16 @@ def fetch_repository(package: dict, checkout: Path) -> None:
     run(git(), "init", "-q", cwd=checkout)
     run(git(), "config", "core.autocrlf", "false", cwd=checkout)
     run(git(), "remote", "add", "origin", f"https://github.com/{package['repository']}.git", cwd=checkout)
-    run(git(), "fetch", "--depth=1", "origin", package["commit"], cwd=checkout)
+    last_error = None
+    for _attempt in range(3):
+        try:
+            run(git(), "fetch", "--depth=1", "origin", package["commit"], cwd=checkout)
+            last_error = None
+            break
+        except ValueError as error:
+            last_error = error
+    if last_error is not None:
+        raise last_error
     run(git(), "checkout", "-q", "--detach", "FETCH_HEAD", cwd=checkout)
     actual = run(git(), "rev-parse", "HEAD", cwd=checkout).strip()
     if actual != package["commit"]:
@@ -359,8 +368,7 @@ def existing_skill_names(registry_root: Path) -> dict[str, str]:
                 locator, digest = targets[0].get("url"), targets[0].get("sha256")
             else:
                 continue
-        with urllib.request.urlopen(locator, timeout=60) as response:
-            payload = response.read()
+        payload = download_bytes(locator)
         if hashlib.sha256(payload).hexdigest() != digest:
             raise ValueError(f"{manifest_path}: downloaded Skill archive digest does not match {digest}")
         for name in archive_skill_names(payload):
@@ -371,6 +379,23 @@ def existing_skill_names(registry_root: Path) -> dict[str, str]:
                 )
             existing[name] = identifier
     return existing
+
+
+def download_bytes(locator: str) -> bytes:
+    """Download one registry archive, falling back to curl for TLS flakiness."""
+    request = urllib.request.Request(locator, headers={"User-Agent": "ora-top-skills-build/1"})
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return response.read()
+    except OSError:
+        result = subprocess.run(
+            ["curl", "-fsSL", "--retry", "3", "--max-time", "60", locator],
+            capture_output=True,
+        )
+        if result.returncode != 0:
+            message = result.stderr.decode("utf-8", "replace").strip()
+            raise ValueError(f"download {locator} failed: {message}")
+        return result.stdout
 
 
 def assert_no_duplicate_skills(

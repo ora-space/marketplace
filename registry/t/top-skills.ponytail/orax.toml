@@ -8,5 +8,5 @@ description = "Lazy senior developer mode for the smallest complete change, less
 homepage = "https://github.com/DietrichGebert/ponytail"
 license = "MIT"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/f25752f9c953eb1add3966ff2843c2f5b41912d9/examples/top-skills/dist/top-skills.ponytail-1.0.0.orax"
-sha256 = "eb3bca7ffb663150b448703ab773faf4cf56288332b638a10f847460e8492351"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/d9c6c299c831093c79fbc4c86a13a0c2460a7e0e/examples/top-skills/dist/top-skills.ponytail-1.0.0.orax"
+sha256 = "3b5b55fa839fff4075e99b50ecc574ad32b6f2cfc2e7137b3d19aec37c1af5e5"

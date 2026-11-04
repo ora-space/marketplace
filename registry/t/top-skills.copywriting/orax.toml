@@ -8,5 +8,5 @@ description = "Write, rewrite, or improve marketing copy for homepages, landing 
 homepage = "https://github.com/coreyhaines31/marketingskills"
 license = "MIT"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/f25752f9c953eb1add3966ff2843c2f5b41912d9/examples/top-skills/dist/top-skills.copywriting-1.0.0.orax"
-sha256 = "4c3e8f8083cc3469952dd54c6b8965626d5f586d4471acbe6a3099f01efe8df0"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/d9c6c299c831093c79fbc4c86a13a0c2460a7e0e/examples/top-skills/dist/top-skills.copywriting-1.0.0.orax"
+sha256 = "72d1aa102194806072faf7ab88689767f0de85bf9bf42031884450ad130e857d"

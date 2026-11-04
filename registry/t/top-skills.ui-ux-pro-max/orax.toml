@@ -8,5 +8,5 @@ description = "Searchable UI/UX design intelligence for layout, typography, colo
 homepage = "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
 license = "MIT"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/f25752f9c953eb1add3966ff2843c2f5b41912d9/examples/top-skills/dist/top-skills.ui-ux-pro-max-1.0.0.orax"
-sha256 = "f6265b40e569725b54eb174dd106908b22854438335a42d16c2c03ec0f1078af"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/d9c6c299c831093c79fbc4c86a13a0c2460a7e0e/examples/top-skills/dist/top-skills.ui-ux-pro-max-1.0.0.orax"
+sha256 = "71b211bc7f517b949165e68e7031b48dd2f903e59f3011609095d937366cc202"

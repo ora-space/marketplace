@@ -8,5 +8,5 @@ description = "Structured discovery before creative work: clarify the goal, comp
 homepage = "https://github.com/obra/superpowers"
 license = "MIT"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/f25752f9c953eb1add3966ff2843c2f5b41912d9/examples/top-skills/dist/top-skills.brainstorming-1.0.0.orax"
-sha256 = "f80c3a53b6ee704e0aefe5d2c2f751c5d3c033628555bcc7316fe9f1a363931e"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/d9c6c299c831093c79fbc4c86a13a0c2460a7e0e/examples/top-skills/dist/top-skills.brainstorming-1.0.0.orax"
+sha256 = "fff8232a8cf371d11f1e114a10b44d1ac22dcedacb3465c0f5af5c659c85c71f"
