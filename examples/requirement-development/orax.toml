@@ -1,0 +1,10 @@
+resolver = 1
+title = "Requirement Development"
+identifier = "ora-space.requirement-development"
+namespace = "official"
+kind = "workflow"
+version = "0.1.0"
+description = "Plan, implement and verify a software requirement in the selected project, then return a reviewable delivery report."
+homepage = "https://github.com/ora-space/marketplace"
+license = "Apache-2.0"
+

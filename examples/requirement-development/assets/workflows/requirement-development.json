@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "name": "需求开发",
+  "version": "0.1.0",
+  "description": "在所选项目中完成需求理解、实现、测试验证与交付说明；所有步骤共享同一次运行的 Workspace。",
+  "viewport": {
+    "x": 20,
+    "y": 100,
+    "zoom": 0.55
+  },
+  "nodes": [
+    {
+      "id": "start",
+      "type": "workflow",
+      "position": {
+        "x": 0,
+        "y": 180
+      },
+      "data": {
+        "kind": "start",
+        "title": "开始：需求",
+        "description": "",
+        "inputVariables": [
+          {
+            "name": "requirement",
+            "displayName": "需求",
+            "fieldType": "paragraph",
+            "valueType": "string",
+            "required": true,
+            "value": "为任务清单增加按截止日期排序，并补充自动化测试和 README 使用说明。"
+          }
+        ]
+      },
+      "deletable": false
+    },
+    {
+      "id": "plan",
+      "type": "workflow",
+      "position": {
+        "x": 360,
+        "y": 180
+      },
+      "data": {
+        "kind": "agent",
+        "title": "理解需求与制定计划",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "prompt": "你是团队的技术负责人。先读取当前仓库的 README.md、目录结构和相关代码，再把下面的需求整理成简短、可执行的实现计划与验收清单。\n\n要求：\n- 只依据实际仓库内容，不访问网络。\n- 本步骤只读，不修改任何文件。\n- 计划应覆盖实现要点、需要修改或新增的文件、测试方式和风险。\n\n需求：\n{{#start.requirement#}}"
+        }
+      }
+    },
+    {
+      "id": "implement",
+      "type": "workflow",
+      "position": {
+        "x": 720,
+        "y": 180
+      },
+      "data": {
+        "kind": "agent",
+        "title": "实现需求",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "prompt": "按计划在当前仓库实现需求，并补齐或更新自动化测试。\n\n要求：\n- 沿用仓库现有技术栈与约定，不安装新的依赖，不访问网络。\n- 不执行 git commit、git push，也不修改仓库外文件。\n- 完成后列出实际修改或新增的文件，以及关键实现。\n- 不要声称运行过尚未运行的命令。\n\n原始需求：\n{{#start.requirement#}}\n\n实现计划：\n{{#plan.output#}}"
+        }
+      }
+    },
+    {
+      "id": "verify",
+      "type": "workflow",
+      "position": {
+        "x": 1080,
+        "y": 180
+      },
+      "data": {
+        "kind": "agent",
+        "title": "运行测试与交付说明",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "prompt": "检查当前工作目录中上一步实际修改的代码，运行仓库 README.md 或现有脚本中给出的测试命令；若失败，修复后重新测试。\n\n要求：\n- 不访问网络，不安装依赖，不执行 git commit 或 git push。\n- 最终回复必须是可直接交付的中文报告，包含：需求完成情况、实际修改的文件与关键代码、实际执行的测试命令与结果、使用示例、仍存在的限制。\n- 不得把未运行的测试写成已通过，不得编造输出。\n\n原始需求：\n{{#start.requirement#}}\n\n实现计划：\n{{#plan.output#}}\n\n实现说明：\n{{#implement.output#}}"
+        }
+      }
+    },
+    {
+      "id": "output",
+      "type": "workflow",
+      "position": {
+        "x": 1440,
+        "y": 180
+      },
+      "data": {
+        "kind": "output",
+        "title": "输出交付报告",
+        "description": "",
+        "outputs": [
+          {
+            "name": "delivery",
+            "variableSelector": [
+              "verify",
+              "output"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "start-plan",
+      "type": "workflow",
+      "source": "start",
+      "target": "plan"
+    },
+    {
+      "id": "plan-implement",
+      "type": "workflow",
+      "source": "plan",
+      "target": "implement"
+    },
+    {
+      "id": "implement-verify",
+      "type": "workflow",
+      "source": "implement",
+      "target": "verify"
+    },
+    {
+      "id": "verify-output",
+      "type": "workflow",
+      "source": "verify",
+      "target": "output"
+    }
+  ],
+  "annotations": [],
+  "globalVariables": []
+}
+

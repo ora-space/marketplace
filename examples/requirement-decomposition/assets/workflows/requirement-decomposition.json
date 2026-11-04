@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "name": "需求拆分",
+  "version": "0.1.0",
+  "description": "把大需求拆成 3 到 5 个可独立分配、带验收条件的子任务，并输出可被任务系统解析的 JSON。",
+  "viewport": {
+    "x": 40,
+    "y": 140,
+    "zoom": 0.8
+  },
+  "nodes": [
+    {
+      "id": "start",
+      "type": "workflow",
+      "position": {
+        "x": 0,
+        "y": 160
+      },
+      "data": {
+        "kind": "start",
+        "title": "开始：大需求",
+        "description": "",
+        "inputVariables": [
+          {
+            "name": "requirement",
+            "displayName": "大需求",
+            "fieldType": "paragraph",
+            "valueType": "string",
+            "required": true,
+            "value": "为团队协作看板增加需求拆分、子任务分配和负责人筛选，并补充自动化测试。"
+          }
+        ]
+      },
+      "deletable": false
+    },
+    {
+      "id": "decompose",
+      "type": "workflow",
+      "position": {
+        "x": 360,
+        "y": 160
+      },
+      "data": {
+        "kind": "agent",
+        "title": "拆分需求与验收条件",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "prompt": "阅读当前仓库的 README.md，并把下面的大需求拆成 3 到 5 个可独立分配给人或 Agent 的子任务。\n\n每个子任务都要有：\n- title：简短、可执行的中文标题。\n- description：具体范围、依赖关系和可验证的验收条件。\n\n只输出一个 JSON 对象，格式严格为：\n{\"tasks\":[{\"title\":\"…\",\"description\":\"…\"}]}\n\n不要输出 Markdown 代码围栏、解释或任何 JSON 之外的文字。不要修改代码，不要访问网络。\n\n大需求：\n{{#start.requirement#}}"
+        }
+      }
+    },
+    {
+      "id": "output",
+      "type": "workflow",
+      "position": {
+        "x": 720,
+        "y": 160
+      },
+      "data": {
+        "kind": "output",
+        "title": "输出子任务",
+        "description": "",
+        "outputs": [
+          {
+            "name": "tasks",
+            "variableSelector": [
+              "decompose",
+              "output"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "start-decompose",
+      "type": "workflow",
+      "source": "start",
+      "target": "decompose"
+    },
+    {
+      "id": "decompose-output",
+      "type": "workflow",
+      "source": "decompose",
+      "target": "output"
+    }
+  ],
+  "annotations": [],
+  "globalVariables": []
+}
+
