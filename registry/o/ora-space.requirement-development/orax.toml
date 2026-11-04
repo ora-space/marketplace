@@ -8,6 +8,6 @@ description = "Plan, implement and verify a software requirement in the selected
 homepage = "https://github.com/ora-space/marketplace"
 license = "Apache-2.0"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/b1a023a71f9d35609458b51a857e9120a8248ef9/examples/requirement-development/dist/ora-space.requirement-development-0.1.0.orax"
-sha256 = "47de69dc37572d942c4e0df6912f42195216de9466951312e5ef67267a706733"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/366d691d36c772ecef97649f0c2077c249c1eab1/examples/requirement-development/dist/ora-space.requirement-development-0.1.0.orax"
+sha256 = "f629a4a0f9c11687e6a7a3ef81c107aa33112c8c6765bdd12dffd661f703269e"
 

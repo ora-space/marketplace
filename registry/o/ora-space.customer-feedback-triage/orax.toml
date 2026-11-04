@@ -8,6 +8,6 @@ description = "Classify customer feedback, decide the handling path and draft a 
 homepage = "https://github.com/ora-space/marketplace"
 license = "Apache-2.0"
 
-url = "https://raw.githubusercontent.com/ora-space/marketplace/b1a023a71f9d35609458b51a857e9120a8248ef9/examples/customer-feedback-triage/dist/ora-space.customer-feedback-triage-0.1.0.orax"
-sha256 = "84e1f7a8c2ee343df539a6c50f0d6868bdaaddd31f77c41018904fe86a99bb4c"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/366d691d36c772ecef97649f0c2077c249c1eab1/examples/customer-feedback-triage/dist/ora-space.customer-feedback-triage-0.1.0.orax"
+sha256 = "2c1a970a620e7cd7ecdfc5da0c3381371b2e7b61184867a6fbf16632db301c5f"
 
