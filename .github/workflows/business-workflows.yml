@@ -1,0 +1,58 @@
+name: business-workflows
+
+on:
+  push:
+    paths:
+      - 'examples/requirement-development/**'
+      - 'examples/requirement-decomposition/**'
+      - 'examples/customer-feedback-triage/**'
+      - 'registry/o/ora-space.requirement-development/**'
+      - 'registry/o/ora-space.requirement-decomposition/**'
+      - 'registry/o/ora-space.customer-feedback-triage/**'
+      - '.github/workflows/business-workflows.yml'
+  pull_request:
+    paths:
+      - 'examples/requirement-development/**'
+      - 'examples/requirement-decomposition/**'
+      - 'examples/customer-feedback-triage/**'
+      - 'registry/o/ora-space.requirement-development/**'
+      - 'registry/o/ora-space.requirement-decomposition/**'
+      - 'registry/o/ora-space.customer-feedback-triage/**'
+      - '.github/workflows/business-workflows.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - package: requirement-development
+            identifier: ora-space.requirement-development
+            artefact: ora-space.requirement-development-0.1.0.orax
+          - package: requirement-decomposition
+            identifier: ora-space.requirement-decomposition
+            artefact: ora-space.requirement-decomposition-0.1.0.orax
+          - package: customer-feedback-triage
+            identifier: ora-space.customer-feedback-triage
+            artefact: ora-space.customer-feedback-triage-0.1.0.orax
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify the package build, committed archive and listing digest
+        working-directory: examples/${{ matrix.package }}
+        run: |
+          set -euo pipefail
+          python3 ../workflow-examples/tools/validate.py .
+          built_out="$(python3 ../workflow-examples/tools/build.py --package . --out "$RUNNER_TEMP/${{ matrix.package }}")"
+          built_digest="$(printf '%s\n' "$built_out" | sed -n 's/.*sha256=\([0-9a-f]\{64\}\).*/\1/p')"
+          committed_digest="$(python3 -c 'import hashlib; print(hashlib.sha256(open("dist/${{ matrix.artefact }}", "rb").read()).hexdigest())')"
+          listing_digest="$(python3 -c 'import tomllib; print(tomllib.load(open("../../registry/o/${{ matrix.identifier }}/orax.toml", "rb"))["sha256"])')"
+          echo "built=$built_digest"
+          echo "committed=$committed_digest"
+          echo "listing=$listing_digest"
+          test -n "$built_digest"
+          test "$built_digest" = "$committed_digest"
+          test "$built_digest" = "$listing_digest"
+

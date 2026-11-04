@@ -1,0 +1,13 @@
+resolver = 1
+title = "Requirement Decomposition"
+identifier = "ora-space.requirement-decomposition"
+namespace = "official"
+kind = "workflow"
+version = "0.1.0"
+description = "Split a large requirement into 3-5 independently assignable subtasks with verifiable acceptance criteria."
+homepage = "https://github.com/ora-space/marketplace"
+license = "Apache-2.0"
+
+url = "https://raw.githubusercontent.com/ora-space/marketplace/b1a023a71f9d35609458b51a857e9120a8248ef9/examples/requirement-decomposition/dist/ora-space.requirement-decomposition-0.1.0.orax"
+sha256 = "314e308f6a0270d4ca00dc2dac77b1cb14a6270446f53228b8b4245bef3fddf0"
+

@@ -1,0 +1,13 @@
+resolver = 1
+title = "Customer Feedback Triage"
+identifier = "ora-space.customer-feedback-triage"
+namespace = "official"
+kind = "workflow"
+version = "0.1.0"
+description = "Classify customer feedback, decide the handling path and draft a factual customer reply with explicit follow-up actions."
+homepage = "https://github.com/ora-space/marketplace"
+license = "Apache-2.0"
+
+url = "https://raw.githubusercontent.com/ora-space/marketplace/b1a023a71f9d35609458b51a857e9120a8248ef9/examples/customer-feedback-triage/dist/ora-space.customer-feedback-triage-0.1.0.orax"
+sha256 = "84e1f7a8c2ee343df539a6c50f0d6868bdaaddd31f77c41018904fe86a99bb4c"
+
