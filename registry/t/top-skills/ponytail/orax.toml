@@ -1,0 +1,12 @@
+resolver = 1
+title = "Ponytail"
+identifier = "top-skills.ponytail"
+namespace = "official"
+kind = "skill"
+version = "1.0.0"
+description = "Lazy senior developer mode for the smallest complete change, less over-engineering, and a concise human-readable answer. From DietrichGebert/ponytail."
+homepage = "https://github.com/DietrichGebert/ponytail"
+license = "MIT"
+
+url = "https://raw.githubusercontent.com/wanglongan587/marketplace/e511702e0f36fbaf9714da972e80feb57ae0cd99/examples/top-skills/dist/top-skills.ponytail-1.0.0.orax"
+sha256 = "eb3bca7ffb663150b448703ab773faf4cf56288332b638a10f847460e8492351"

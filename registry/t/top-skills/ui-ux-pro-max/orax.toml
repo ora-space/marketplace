@@ -1,0 +1,12 @@
+resolver = 1
+title = "UI/UX Pro Max"
+identifier = "top-skills.ui-ux-pro-max"
+namespace = "official"
+kind = "skill"
+version = "1.0.0"
+description = "Searchable UI/UX design intelligence for layout, typography, color, motion, accessibility, charts, and 22 technology stacks. From nextlevelbuilder/ui-ux-pro-max-skill."
+homepage = "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+license = "MIT"
+
+url = "https://raw.githubusercontent.com/wanglongan587/marketplace/e511702e0f36fbaf9714da972e80feb57ae0cd99/examples/top-skills/dist/top-skills.ui-ux-pro-max-1.0.0.orax"
+sha256 = "f6265b40e569725b54eb174dd106908b22854438335a42d16c2c03ec0f1078af"

@@ -1,0 +1,12 @@
+resolver = 1
+title = "Humanizer"
+identifier = "top-skills.humanizer"
+namespace = "official"
+kind = "skill"
+version = "1.0.0"
+description = "Rewrite AI-generated prose into natural, varied writing while preserving facts and intent. From blader/humanizer."
+homepage = "https://github.com/blader/humanizer"
+license = "MIT"
+
+url = "https://raw.githubusercontent.com/wanglongan587/marketplace/e511702e0f36fbaf9714da972e80feb57ae0cd99/examples/top-skills/dist/top-skills.humanizer-1.0.0.orax"
+sha256 = "1a3153fdfb59a90d91103d95ca44694b63af802adafaeba6e61d43f42da42bb0"

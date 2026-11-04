@@ -319,7 +319,7 @@ def check_all(packages: list[dict], results: list[tuple[dict, str, Path, str]], 
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, default=ROOT / "dist")
-    parser.add_argument("--registry-root", type=Path, default=ROOT.parents[2] / "registry" / "t" / "top-skills")
+    parser.add_argument("--registry-root", type=Path, default=ROOT.parents[1] / "registry" / "t" / "top-skills")
     parser.add_argument("--write-registry", action="store_true")
     parser.add_argument("--registry-base")
     parser.add_argument("--check", action="store_true")
