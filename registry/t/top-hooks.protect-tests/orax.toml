@@ -1,0 +1,34 @@
+resolver = 1
+title = "Protect Tests"
+identifier = "top-hooks.protect-tests"
+namespace = "official"
+kind = "hook"
+version = "1.0.0"
+description = "Stop fake-green test changes: deleting tests, renaming suites away, and adding skip or xfail markers. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+
+[[targets]]
+target = "aarch64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.protect-tests-1.0.0-aarch64-apple-darwin.orax"
+sha256 = "f19adb02805dc5ec970c342b2697b083d9bc364d041799d9aa631f58a27e771a"
+
+[[targets]]
+target = "aarch64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.protect-tests-1.0.0-aarch64-unknown-linux-gnu.orax"
+sha256 = "1583ac08afdefc592404eeae553986a7bb527da9685a6f0d8ccf9c069beab07f"
+
+[[targets]]
+target = "x86_64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.protect-tests-1.0.0-x86_64-apple-darwin.orax"
+sha256 = "1e6e5064fb9330a07fcc591fb06e12a3de1f4543251720dffa403b978ed8b98c"
+
+[[targets]]
+target = "x86_64-pc-windows-msvc"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.protect-tests-1.0.0-x86_64-pc-windows-msvc.orax"
+sha256 = "9bda2cc55ed3d9e0dfe2c484ad54562e1be427086a1deef846259f6256ad6cc9"
+
+[[targets]]
+target = "x86_64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.protect-tests-1.0.0-x86_64-unknown-linux-gnu.orax"
+sha256 = "4aabe60e67beca24f629fe70b4d48ca2a050674a035e9173236e60a51601183b"

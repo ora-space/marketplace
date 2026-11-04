@@ -1,0 +1,34 @@
+resolver = 1
+title = "Block Dangerous Commands"
+identifier = "top-hooks.block-dangerous-commands"
+namespace = "official"
+kind = "hook"
+version = "1.0.0"
+description = "Stop catastrophic shell commands such as recursive home deletion, disk wipes, fork bombs, and force pushes to main. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+
+[[targets]]
+target = "aarch64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.block-dangerous-commands-1.0.0-aarch64-apple-darwin.orax"
+sha256 = "54bc7e4dc7e2a26493e458001a52c9df2c3b26affa2bed7eaec0b8dc4939e747"
+
+[[targets]]
+target = "aarch64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.block-dangerous-commands-1.0.0-aarch64-unknown-linux-gnu.orax"
+sha256 = "465ac415fd718cdfedcd60d80f317cda53ead04865f79951c2ede6e4f09dc64f"
+
+[[targets]]
+target = "x86_64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.block-dangerous-commands-1.0.0-x86_64-apple-darwin.orax"
+sha256 = "42497873a5453c31ad447635dff165a3c2a7e0e871847138d8f5b36e9b145217"
+
+[[targets]]
+target = "x86_64-pc-windows-msvc"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.block-dangerous-commands-1.0.0-x86_64-pc-windows-msvc.orax"
+sha256 = "5fcb3557c52842f146fb7a6585cac75d27c48476244ff6d87d70d4d0fda9f12b"
+
+[[targets]]
+target = "x86_64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.block-dangerous-commands-1.0.0-x86_64-unknown-linux-gnu.orax"
+sha256 = "0ee90b3752fe52142b408bab3e1fee29a011749ed04218d4170d15d4e97c1d80"

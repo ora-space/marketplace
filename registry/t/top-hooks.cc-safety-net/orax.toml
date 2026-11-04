@@ -1,0 +1,34 @@
+resolver = 1
+title = "CC Safety Net"
+identifier = "top-hooks.cc-safety-net"
+namespace = "official"
+kind = "hook"
+version = "2.7.3"
+description = "Block destructive commands, secret access, and unsafe agent actions before tool calls run. From kenryu42/cc-safety-net."
+homepage = "https://github.com/kenryu42/cc-safety-net"
+license = "MIT"
+
+[[targets]]
+target = "aarch64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.cc-safety-net-2.7.3-aarch64-apple-darwin.orax"
+sha256 = "0d4d4ceed78c68f7f25c8fe72a0e6cf06b198906406947d8bb7d5a18f21f0add"
+
+[[targets]]
+target = "aarch64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.cc-safety-net-2.7.3-aarch64-unknown-linux-gnu.orax"
+sha256 = "dc89975459f220c3ffc0a4c4e7a7faca8a5b6af772a5ab05048535f9a893f11e"
+
+[[targets]]
+target = "x86_64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.cc-safety-net-2.7.3-x86_64-apple-darwin.orax"
+sha256 = "651c802808add0a804383b3d2e99b33ef087cb4f0bf1dff15b28e98c138bf898"
+
+[[targets]]
+target = "x86_64-pc-windows-msvc"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.cc-safety-net-2.7.3-x86_64-pc-windows-msvc.orax"
+sha256 = "1052732e621bd9be33fe296a30a48f343dbb8dfb0b5f50af20687c76c4a9f21e"
+
+[[targets]]
+target = "x86_64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.cc-safety-net-2.7.3-x86_64-unknown-linux-gnu.orax"
+sha256 = "5cbbc151e6dad5cb6dd595402b03a432d8c3ac51dc0c1f06ac7b92bfddea14cc"

@@ -1,0 +1,34 @@
+resolver = 1
+title = "Auto Stage"
+identifier = "top-hooks.auto-stage"
+namespace = "official"
+kind = "hook"
+version = "1.0.0"
+description = "Stage every file an agent edits or writes so git status always shows exactly what the agent changed. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+
+[[targets]]
+target = "aarch64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.auto-stage-1.0.0-aarch64-apple-darwin.orax"
+sha256 = "476d587e86387e4d662e54c3d5cb447d3432b0dbe9e482024223425202791181"
+
+[[targets]]
+target = "aarch64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.auto-stage-1.0.0-aarch64-unknown-linux-gnu.orax"
+sha256 = "2678cfe485ed18d00902fcebc187c09b441572a4fddd9a45124517b4c3618793"
+
+[[targets]]
+target = "x86_64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.auto-stage-1.0.0-x86_64-apple-darwin.orax"
+sha256 = "a0c88352dc138e042969c1bebc995b86c4a831f453583a99db1ed668f28deb4a"
+
+[[targets]]
+target = "x86_64-pc-windows-msvc"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.auto-stage-1.0.0-x86_64-pc-windows-msvc.orax"
+sha256 = "4c7b2df377d6891a5c650bc25a5857f2ff931387b98a2585e8f69bcc17435ee9"
+
+[[targets]]
+target = "x86_64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.auto-stage-1.0.0-x86_64-unknown-linux-gnu.orax"
+sha256 = "51f76ef3efb858991185442bbd537a7710e3dc269916ea949f127ce0455ed408"
