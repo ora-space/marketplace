@@ -23,10 +23,10 @@ jobs:
           go-version: "1.27.1"
       - name: Test builder
         working-directory: examples/top-hooks
-        run: python -m unittest tools/test_build.py
+        run: python3 -m unittest tools/test_build.py
       - name: Rebuild and verify artifacts
         working-directory: examples/top-hooks
         env:
           GIT_BIN: git
           GO_BIN: go
-        run: python tools/build.py --check
+        run: python3 tools/build.py --check
