@@ -19,21 +19,6 @@ skill_path = "skills/brainstorming"
 license_files = ["LICENSE"]
 
 [[packages]]
-slug = "tdd"
-identifier = "top-skills.tdd"
-title = "Test-Driven Development"
-version = "1.0.0"
-description = "Red-green-refactor guidance with behavior-focused tests, seam selection, and anti-pattern checks. From mattpocock/skills."
-homepage = "https://github.com/mattpocock/skills"
-license = "MIT"
-repository = "mattpocock/skills"
-author = "Matt Pocock"
-commit = "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d"
-stars = 311835
-skill_path = "skills/engineering/tdd"
-license_files = ["LICENSE"]
-
-[[packages]]
 slug = "ponytail"
 identifier = "top-skills.ponytail"
 title = "Ponytail"
@@ -152,4 +137,19 @@ commit = "0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0"
 stars = 64540
 skill_path = "."
 asset_name = "humanizer"
+license_files = ["LICENSE"]
+
+[[packages]]
+slug = "copywriting"
+identifier = "top-skills.copywriting"
+title = "Copywriting"
+version = "1.0.0"
+description = "Write, rewrite, or improve marketing copy for homepages, landing pages, pricing pages, feature pages, and product pages. From coreyhaines31/marketingskills."
+homepage = "https://github.com/coreyhaines31/marketingskills"
+license = "MIT"
+repository = "coreyhaines31/marketingskills"
+author = "Corey Haines"
+commit = "88c79f6528a9347420e57ceb1fff9a60de651768"
+stars = 58383
+skill_path = "skills/copywriting"
 license_files = ["LICENSE"]

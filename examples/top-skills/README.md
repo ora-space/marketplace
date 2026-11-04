@@ -13,15 +13,15 @@ commit in [`catalog.toml`](catalog.toml).
 | Rank | Upstream repository | Stars | License | Skill |
 | ---: | --- | ---: | --- | --- |
 | 1 | [obra/superpowers](https://github.com/obra/superpowers) | 312,020 | MIT | `brainstorming` |
-| 2 | [mattpocock/skills](https://github.com/mattpocock/skills) | 311,835 | MIT | `tdd` |
-| 3 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 183,961 | MIT | `ponytail` |
-| 4 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 144,899 | MIT | `ui-ux-pro-max` |
-| 5 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | 117,314 | Apache-2.0 | `caveman` |
-| 6 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 113,117 | MIT | `code-review-and-quality` |
-| 7 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 101,823 | Apache-2.0 | `impeccable` |
-| 8 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | 93,234 | Apache-2.0 | `archify` |
-| 9 | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) | 64,786 | MIT | `diagram-design` |
-| 10 | [blader/humanizer](https://github.com/blader/humanizer) | 64,540 | MIT | `humanizer` |
+| 2 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 183,961 | MIT | `ponytail` |
+| 3 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 144,899 | MIT | `ui-ux-pro-max` |
+| 4 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | 117,314 | Apache-2.0 | `caveman` |
+| 5 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 113,117 | MIT | `code-review-and-quality` |
+| 6 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 101,823 | Apache-2.0 | `impeccable` |
+| 7 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | 93,234 | Apache-2.0 | `archify` |
+| 8 | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) | 64,786 | MIT | `diagram-design` |
+| 9 | [blader/humanizer](https://github.com/blader/humanizer) | 64,540 | MIT | `humanizer` |
+| 10 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 58,383 | MIT | `copywriting` |
 
 Repositories that merely carry a `SKILL.md` as an ancillary file, or whose
 license does not allow redistribution, are excluded. Stars are a snapshot,
@@ -34,6 +34,9 @@ Notable exclusions from the same snapshot:
   product guidance rather than a portable skill package.
 - `anthropics/skills` (187,199 stars): GitHub reports no repository license,
   so its contents cannot be redistributed here.
+- `mattpocock/skills` (311,835 stars): the repository is already present in the
+  official marketplace as `official/mattpocock.skills`; adding another package
+  would duplicate it. The next ranked skill is used instead.
 - `career-ops-hq/career-ops` (79,967 stars): its skill expects the repository's
   root `AGENTS.md`, `modes/` and runtime files, so extracting only the selected
   skill directory would produce an installable but non-working package.
