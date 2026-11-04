@@ -1,0 +1,154 @@
+snapshot_date = "2026-11-04"
+snapshot_at = "2026-11-04T08:30:00Z"
+namespace = "official"
+packager = "Ora Space"
+
+[[packages]]
+slug = "tdd-guard"
+title = "TDD Guard"
+description = "Automated test-driven development enforcement for Claude Code. From nizos/tdd-guard."
+homepage = "https://github.com/nizos/tdd-guard"
+license = "MIT"
+repository = "nizos/tdd-guard"
+author = "Nizar Selander"
+commit = "ffb7026c8f7e335e2914461fce9ec3f897a87125"
+stars = 2373
+plugin_path = "plugin"
+plugin_name = "tdd-guard"
+license_files = ["LICENSE"]
+pin_npm_package = "tdd-guard@1.7.0"
+
+[[packages]]
+slug = "prompt-improver"
+title = "Prompt Improver"
+description = "Clarify vague prompts and inject targeted context before Claude starts work. From severity1/claude-code-prompt-improver."
+homepage = "https://github.com/severity1/claude-code-prompt-improver"
+license = "MIT"
+repository = "severity1/claude-code-prompt-improver"
+author = "severity1"
+commit = "50aae187bb4f08b852f318234b654df3332726a4"
+stars = 1966
+plugin_path = "."
+plugin_name = "prompt-improver"
+plugin_include = [".claude-plugin", "hooks", "scripts", "nudges", "skills", "README.md"]
+license_files = ["LICENSE"]
+
+[[packages]]
+slug = "cc-safety-net"
+title = "CC Safety Net"
+description = "Block destructive commands, secret access, and unsafe agent actions before tool calls run. From kenryu42/cc-safety-net."
+homepage = "https://github.com/kenryu42/cc-safety-net"
+license = "MIT"
+repository = "kenryu42/cc-safety-net"
+author = "J Liew"
+commit = "0fb31bdf3f5b6f308b51bb0a9807f572fb4f510e"
+stars = 1910
+plugin_path = "."
+plugin_name = "cc-safety-net"
+plugin_include = [".claude-plugin", "dist", "hooks", "skills", "package.json", "README.md"]
+license_files = ["LICENSE"]
+
+[[packages]]
+slug = "humanize"
+title = "Humanize"
+description = "Block AI buzzwords and machine-sounding prose before file writes, commits, and generated messages land. From fcakyon/claude-codex-settings."
+homepage = "https://github.com/fcakyon/claude-codex-settings"
+license = "Apache-2.0"
+repository = "fcakyon/claude-codex-settings"
+author = "Fatih C. Akyon"
+commit = "4f2b4bc9a74024397b4688cbafd1ae538a83a5fb"
+stars = 1198
+plugin_path = "plugins/humanize"
+plugin_name = "humanize"
+license_files = ["LICENSE"]
+python_fallback = true
+
+[[packages]]
+slug = "block-dangerous-commands"
+title = "Block Dangerous Commands"
+description = "Stop catastrophic shell commands such as recursive home deletion, disk wipes, fork bombs, and force pushes to main. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+repository = "karanb192/claude-code-hooks"
+author = "Karan Bansal"
+commit = "57a28c7687305e4a9b9dd50490e9b3c552c71ca4"
+stars = 572
+plugin_path = "plugins/block-dangerous-commands"
+plugin_name = "block-dangerous-commands"
+license_files = ["LICENSE"]
+commonjs = true
+
+[[packages]]
+slug = "protect-secrets"
+title = "Protect Secrets"
+description = "Prevent agents from reading, modifying, or exfiltrating environment files, SSH keys, cloud credentials, and keystores. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+repository = "karanb192/claude-code-hooks"
+author = "Karan Bansal"
+commit = "57a28c7687305e4a9b9dd50490e9b3c552c71ca4"
+stars = 572
+plugin_path = "plugins/protect-secrets"
+plugin_name = "protect-secrets"
+license_files = ["LICENSE"]
+commonjs = true
+
+[[packages]]
+slug = "git-safety"
+title = "Git Safety"
+description = "Block force pushes to protected branches, destructive branch operations, and destructive GitHub CLI actions. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+repository = "karanb192/claude-code-hooks"
+author = "Karan Bansal"
+commit = "57a28c7687305e4a9b9dd50490e9b3c552c71ca4"
+stars = 572
+plugin_path = "plugins/git-safety"
+plugin_name = "git-safety"
+license_files = ["LICENSE"]
+commonjs = true
+
+[[packages]]
+slug = "protect-tests"
+title = "Protect Tests"
+description = "Stop fake-green test changes: deleting tests, renaming suites away, and adding skip or xfail markers. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+repository = "karanb192/claude-code-hooks"
+author = "Karan Bansal"
+commit = "57a28c7687305e4a9b9dd50490e9b3c552c71ca4"
+stars = 572
+plugin_path = "plugins/protect-tests"
+plugin_name = "protect-tests"
+license_files = ["LICENSE"]
+commonjs = true
+
+[[packages]]
+slug = "config-guard"
+title = "Config Guard"
+description = "Prevent agents from tampering with their own hooks, settings, MCP configuration, and plugin manifests. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+repository = "karanb192/claude-code-hooks"
+author = "Karan Bansal"
+commit = "57a28c7687305e4a9b9dd50490e9b3c552c71ca4"
+stars = 572
+plugin_path = "plugins/config-guard"
+plugin_name = "config-guard"
+license_files = ["LICENSE"]
+commonjs = true
+
+[[packages]]
+slug = "auto-stage"
+title = "Auto Stage"
+description = "Stage every file an agent edits or writes so git status always shows exactly what the agent changed. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+repository = "karanb192/claude-code-hooks"
+author = "Karan Bansal"
+commit = "57a28c7687305e4a9b9dd50490e9b3c552c71ca4"
+stars = 572
+plugin_path = "plugins/auto-stage"
+plugin_name = "auto-stage"
+license_files = ["LICENSE"]
+commonjs = true

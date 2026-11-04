@@ -1,0 +1,32 @@
+name: top-hooks
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/top-hooks.yml"
+      - "examples/top-hooks/**"
+      - "registry/t/top-hooks.*/**"
+  push:
+    branches:
+      - main
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.27.1"
+      - name: Test builder
+        working-directory: examples/top-hooks
+        run: python -m unittest tools/test_build.py
+      - name: Rebuild and verify artifacts
+        working-directory: examples/top-hooks
+        env:
+          GIT_BIN: git
+          GO_BIN: go
+        run: python tools/build.py --check
