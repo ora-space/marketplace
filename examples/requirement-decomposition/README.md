@@ -26,7 +26,8 @@ accepted by both the current Cloud publish gate and v2.
 
 - A Project selected when the workflow starts. The Agent reads its README but
   does not modify files.
-- A configured default Agent executor and model for the runner.
+- The `official/ora-space.opencode` Agent installed in the space, with a
+  configured model. The package pins no model ID.
 
 The workflow is read-only. It does not access the network or install
 dependencies.

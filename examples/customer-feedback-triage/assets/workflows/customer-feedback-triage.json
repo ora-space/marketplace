@@ -62,6 +62,9 @@
         "description": "",
         "agentConfig": {
           "schemaVersion": 3,
+          "executor": {
+            "agentCli": "official/ora-space.opencode"
+          },
           "prompt": "你是客户成功团队的分诊负责人。只根据输入信息做分诊，不猜测未提供的产品日志、版本缺陷或承诺赔付。\n\n请输出简洁中文分诊结论：\n1. 紧急度：P0-P3，并说明判断依据。\n2. 问题类型：故障、使用咨询、功能需求、计费/合同、其他。\n3. 客户情绪与业务影响。\n4. 缺失信息：处理前必须补充哪些信息。\n5. 建议处置路径：一线可尝试的步骤、需要升级的团队、建议响应时限。\n6. 对外沟通禁忌：哪些内容不能在未确认前承诺。\n\n客户反馈：\n{{#start.feedback#}}\n\n客户与合同信息：\n{{#start.customer#}}\n\n已知背景与处理约束：\n{{#start.context#}}"
         }
       }
@@ -79,6 +82,9 @@
         "description": "",
         "agentConfig": {
           "schemaVersion": 3,
+          "executor": {
+            "agentCli": "official/ora-space.opencode"
+          },
           "prompt": "根据分诊结论，生成一份供客户成功负责人审核的完整处理材料。\n\n最终回复必须是中文 Markdown，依次包含：\n## 分诊结论\n用一句话说明优先级、问题类型和业务影响。\n\n## 内部处置\n- 负责人与建议时限\n- 立即执行的排查或缓解步骤\n- 需要升级的团队与升级条件\n- 需要向客户补充确认的信息\n\n## 客户回复\n给出一段可以直接发送给客户的回复：先确认影响并表达重视，再说明已采取的动作和需要客户提供的信息；不得承诺尚未确认的根因、修复时间、赔偿或版本结论。\n\n不得编造日志、工单号、监控指标或已完成的操作。\n\n客户反馈：\n{{#start.feedback#}}\n\n客户与合同信息：\n{{#start.customer#}}\n\n已知背景与处理约束：\n{{#start.context#}}\n\n分诊结论：\n{{#triage.output#}}"
         }
       }

@@ -14,15 +14,17 @@ delivering a software requirement inside the project selected at run time.
 | 输出交付报告 | Exposes the final delivery report as `delivery`. |
 
 All Agent nodes share the run's workspace, so implementation and verification
-see the same files. The workflow uses the runner's implicit `default` executor
-slot; it ships no model ID, credential, MCP, Skill, or deployment-specific
+see the same files. The Agent nodes target the installed
+`official/ora-space.opencode` executor and use that executor's default model;
+the package pins no model ID, credential, MCP, Skill, or deployment-specific
 configuration.
 
 ## Requirements
 
 - A Project selected when the workflow starts. The Project should contain the
   source tree and test command the requirement refers to.
-- A configured default Agent executor and model for the runner.
+- The `official/ora-space.opencode` Agent installed in the space, with a
+  configured model.
 
 The workflow is instructed not to install dependencies, access the network, or
 commit/push changes. Review the produced diff before accepting the result.

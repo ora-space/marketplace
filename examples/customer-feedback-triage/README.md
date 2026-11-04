@@ -15,12 +15,14 @@ reviewable triage, handling plan, and customer reply.
 
 The workflow does not read or modify project files. Select any Project when
 starting it; the project is the run's workspace boundary, not an input source.
-The workflow uses the runner's implicit `default` executor slot and ships no
-model ID, credential, MCP, Skill, or deployment-specific configuration.
+The Agent nodes target the installed `official/ora-space.opencode` executor and
+use that executor's default model; the package ships no model ID, credential,
+MCP, Skill, or deployment-specific configuration.
 
 ## Requirements
 
-- A configured default Agent executor and model for the runner.
+- The `official/ora-space.opencode` Agent installed in the space, with a
+  configured model.
 - Feedback text suitable for the configured model provider. Do not paste
   credentials, access tokens, or unnecessary personal data.
 

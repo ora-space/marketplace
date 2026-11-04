@@ -46,6 +46,9 @@
         "description": "",
         "agentConfig": {
           "schemaVersion": 3,
+          "executor": {
+            "agentCli": "official/ora-space.opencode"
+          },
           "prompt": "阅读当前仓库的 README.md，并把下面的大需求拆成 3 到 5 个可独立分配给人或 Agent 的子任务。\n\n每个子任务都要有：\n- title：简短、可执行的中文标题。\n- description：具体范围、依赖关系和可验证的验收条件。\n\n只输出一个 JSON 对象，格式严格为：\n{\"tasks\":[{\"title\":\"…\",\"description\":\"…\"}]}\n\n不要输出 Markdown 代码围栏、解释或任何 JSON 之外的文字。不要修改代码，不要访问网络。\n\n大需求：\n{{#start.requirement#}}"
         }
       }
