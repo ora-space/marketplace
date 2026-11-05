@@ -1,0 +1,13 @@
+resolver = 1
+title = "Requirement Development"
+identifier = "ora-space.requirement-development"
+namespace = "official"
+kind = "workflow"
+version = "0.1.0"
+description = "Plan, implement and verify a software requirement in the selected project, then return a reviewable delivery report."
+homepage = "https://github.com/ora-space/marketplace"
+license = "Apache-2.0"
+
+url = "https://raw.githubusercontent.com/ora-space/marketplace/366d691d36c772ecef97649f0c2077c249c1eab1/examples/requirement-development/dist/ora-space.requirement-development-0.1.0.orax"
+sha256 = "f629a4a0f9c11687e6a7a3ef81c107aa33112c8c6765bdd12dffd661f703269e"
+

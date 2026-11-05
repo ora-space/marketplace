@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "name": "客户反馈分诊",
+  "version": "0.1.0",
+  "description": "对客户反馈做优先级、类型、情绪与缺失信息分诊，给出处置路径并起草可直接审核的客户回复。",
+  "viewport": {
+    "x": 20,
+    "y": 80,
+    "zoom": 0.7
+  },
+  "nodes": [
+    {
+      "id": "start",
+      "type": "workflow",
+      "position": {
+        "x": 0,
+        "y": 140
+      },
+      "data": {
+        "kind": "start",
+        "title": "开始：客户反馈",
+        "description": "",
+        "inputVariables": [
+          {
+            "name": "feedback",
+            "displayName": "客户反馈原文",
+            "fieldType": "paragraph",
+            "valueType": "string",
+            "required": true,
+            "value": "升级后批量导入一直失败，已经影响今天的对账，请联系我们处理。"
+          },
+          {
+            "name": "customer",
+            "displayName": "客户与合同信息",
+            "fieldType": "text-input",
+            "valueType": "string",
+            "required": false,
+            "value": "华东制造 · 企业版"
+          },
+          {
+            "name": "context",
+            "displayName": "已知背景与处理约束",
+            "fieldType": "paragraph",
+            "valueType": "string",
+            "required": false,
+            "value": "客户本周刚升级到最新版本；对账窗口在每天 18:00 前；暂未确认具体报错码。"
+          }
+        ]
+      },
+      "deletable": false
+    },
+    {
+      "id": "triage",
+      "type": "workflow",
+      "position": {
+        "x": 360,
+        "y": 140
+      },
+      "data": {
+        "kind": "agent",
+        "title": "分诊与风险评估",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "executor": {
+            "agentCli": "official/ora-space.opencode"
+          },
+          "prompt": "你是客户成功团队的分诊负责人。只根据输入信息做分诊，不猜测未提供的产品日志、版本缺陷或承诺赔付。\n\n请输出简洁中文分诊结论：\n1. 紧急度：P0-P3，并说明判断依据。\n2. 问题类型：故障、使用咨询、功能需求、计费/合同、其他。\n3. 客户情绪与业务影响。\n4. 缺失信息：处理前必须补充哪些信息。\n5. 建议处置路径：一线可尝试的步骤、需要升级的团队、建议响应时限。\n6. 对外沟通禁忌：哪些内容不能在未确认前承诺。\n\n客户反馈：\n{{#start.feedback#}}\n\n客户与合同信息：\n{{#start.customer#}}\n\n已知背景与处理约束：\n{{#start.context#}}"
+        }
+      }
+    },
+    {
+      "id": "respond",
+      "type": "workflow",
+      "position": {
+        "x": 720,
+        "y": 140
+      },
+      "data": {
+        "kind": "agent",
+        "title": "处置建议与客户回复",
+        "description": "",
+        "agentConfig": {
+          "schemaVersion": 3,
+          "executor": {
+            "agentCli": "official/ora-space.opencode"
+          },
+          "prompt": "根据分诊结论，生成一份供客户成功负责人审核的完整处理材料。\n\n最终回复必须是中文 Markdown，依次包含：\n## 分诊结论\n用一句话说明优先级、问题类型和业务影响。\n\n## 内部处置\n- 负责人与建议时限\n- 立即执行的排查或缓解步骤\n- 需要升级的团队与升级条件\n- 需要向客户补充确认的信息\n\n## 客户回复\n给出一段可以直接发送给客户的回复：先确认影响并表达重视，再说明已采取的动作和需要客户提供的信息；不得承诺尚未确认的根因、修复时间、赔偿或版本结论。\n\n不得编造日志、工单号、监控指标或已完成的操作。\n\n客户反馈：\n{{#start.feedback#}}\n\n客户与合同信息：\n{{#start.customer#}}\n\n已知背景与处理约束：\n{{#start.context#}}\n\n分诊结论：\n{{#triage.output#}}"
+        }
+      }
+    },
+    {
+      "id": "output",
+      "type": "workflow",
+      "position": {
+        "x": 1080,
+        "y": 140
+      },
+      "data": {
+        "kind": "output",
+        "title": "输出处理材料",
+        "description": "",
+        "outputs": [
+          {
+            "name": "result",
+            "variableSelector": [
+              "respond",
+              "output"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "start-triage",
+      "type": "workflow",
+      "source": "start",
+      "target": "triage"
+    },
+    {
+      "id": "triage-respond",
+      "type": "workflow",
+      "source": "triage",
+      "target": "respond"
+    },
+    {
+      "id": "respond-output",
+      "type": "workflow",
+      "source": "respond",
+      "target": "output"
+    }
+  ],
+  "annotations": [],
+  "globalVariables": []
+}
+
