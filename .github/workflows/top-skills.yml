@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - 'examples/top-skills/**'
-      - 'registry/t/top-skills/**'
+      - 'registry/t/top-skills*/**'
   pull_request:
     paths:
       - 'examples/top-skills/**'
-      - 'registry/t/top-skills/**'
+      - 'registry/t/top-skills*/**'
 
 jobs:
   verify:

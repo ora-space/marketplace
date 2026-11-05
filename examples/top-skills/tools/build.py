@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import hashlib
 import json
 import os
@@ -13,7 +14,9 @@ import subprocess
 import sys
 import tempfile
 import tomllib
+import urllib.request
 import zipfile
+from io import BytesIO
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -82,7 +85,16 @@ def fetch_repository(package: dict, checkout: Path) -> None:
     run(git(), "init", "-q", cwd=checkout)
     run(git(), "config", "core.autocrlf", "false", cwd=checkout)
     run(git(), "remote", "add", "origin", f"https://github.com/{package['repository']}.git", cwd=checkout)
-    run(git(), "fetch", "--depth=1", "origin", package["commit"], cwd=checkout)
+    last_error = None
+    for _attempt in range(3):
+        try:
+            run(git(), "fetch", "--depth=1", "origin", package["commit"], cwd=checkout)
+            last_error = None
+            break
+        except ValueError as error:
+            last_error = error
+    if last_error is not None:
+        raise last_error
     run(git(), "checkout", "-q", "--detach", "FETCH_HEAD", cwd=checkout)
     actual = run(git(), "rev-parse", "HEAD", cwd=checkout).strip()
     if actual != package["commit"]:
@@ -151,11 +163,29 @@ def source_record(package: dict, skill_name: str) -> str:
             "skill_path": package["skill_path"],
             "snapshot_date": package["snapshot_date"],
             "stars": package["stars"],
+            "excluded_paths": package.get("exclude", []),
         },
         ensure_ascii=False,
         indent=2,
         sort_keys=True,
     ) + "\n"
+
+
+def prune_skill(root: Path, patterns: list[str]) -> None:
+    """Remove explicitly excluded upstream files without leaving empty directories."""
+    if not patterns:
+        return
+    for path in sorted(root.rglob("*"), key=lambda item: len(item.parts), reverse=True):
+        if path.is_file():
+            relative = path.relative_to(root).as_posix()
+            if relative in {"SKILL.md", "LICENSE"}:
+                continue
+            if any(fnmatch.fnmatchcase(relative, pattern) for pattern in patterns):
+                path.unlink()
+        elif path != root and not any(path.iterdir()):
+            path.rmdir()
+    if not (root / "SKILL.md").is_file():
+        raise ValueError(f"pruning removed SKILL.md from {root}")
 
 
 def stage_package(package: dict, checkout: Path, stage: Path) -> str:
@@ -177,6 +207,7 @@ def stage_package(package: dict, checkout: Path, stage: Path) -> str:
     assets.mkdir(parents=True)
     copied = assets / asset_name
     shutil.copytree(source, copied, symlinks=False, ignore=shutil.ignore_patterns(".git"))
+    prune_skill(copied, package.get("exclude", []))
     validate_tree(copied)
     (stage / "orax.toml").write_text(package_manifest(package), encoding="utf-8", newline="\n")
     (stage / "README.md").write_text(package_readme(package, skill_name), encoding="utf-8", newline="\n")
@@ -243,7 +274,7 @@ def registry_entry(package: dict, digest: str, url_base: str) -> str:
 
 def write_registry(package: dict, skill_name: str, digest: str, registry_root: Path, url_base: str) -> None:
     """Write one registry listing and its README."""
-    directory = registry_root / package["slug"]
+    directory = registry_root / package["identifier"]
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "orax.toml").write_text(
         registry_entry(package, digest, url_base), encoding="utf-8", newline="\n"
@@ -294,6 +325,99 @@ def build_all(packages: list[dict], output: Path) -> list[tuple[dict, str, Path,
     return results
 
 
+def archive_skill_names(archive_bytes: bytes) -> set[str]:
+    """Return the canonical Skill names contributed by one package archive."""
+    names = set()
+    with zipfile.ZipFile(BytesIO(archive_bytes)) as archive:
+        for entry in archive.infolist():
+            parts = entry.filename.split("/")
+            if len(parts) != 3 or parts[0] != "assets" or parts[2] != "SKILL.md":
+                continue
+            content = archive.read(entry)
+            raw = content.decode("utf-8")
+            if not raw.startswith("---\n"):
+                raise ValueError(f"{entry.filename}: missing front matter")
+            end = raw.find("\n---", 4)
+            if end < 0:
+                raise ValueError(f"{entry.filename}: unterminated front matter")
+            match = re.search(r"^name\s*:\s*(.+?)\s*$", raw[4:end], re.MULTILINE)
+            if match is None:
+                raise ValueError(f"{entry.filename}: front matter has no name")
+            name = match.group(1).strip().strip('"\'')
+            if not ASSET_NAME.fullmatch(name):
+                raise ValueError(f"{entry.filename}: invalid Skill name {name!r}")
+            names.add(name.lower())
+    if not names:
+        raise ValueError("package archive has no direct assets/<skill>/SKILL.md entries")
+    return names
+
+
+def existing_skill_names(registry_root: Path) -> dict[str, str]:
+    """Read Skill names from published registry packages other than this batch."""
+    existing: dict[str, str] = {}
+    for manifest_path in sorted(registry_root.rglob("orax.toml")):
+        manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
+        identifier = manifest.get("identifier")
+        if manifest.get("kind") != "skill" or not isinstance(identifier, str) or identifier.startswith("top-skills."):
+            continue
+        locator = manifest.get("url")
+        digest = manifest.get("sha256")
+        if not isinstance(locator, str) or not isinstance(digest, str):
+            targets = manifest.get("targets")
+            if isinstance(targets, list) and targets:
+                locator, digest = targets[0].get("url"), targets[0].get("sha256")
+            else:
+                continue
+        payload = download_bytes(locator)
+        if hashlib.sha256(payload).hexdigest() != digest:
+            raise ValueError(f"{manifest_path}: downloaded Skill archive digest does not match {digest}")
+        for name in archive_skill_names(payload):
+            if name in existing:
+                raise ValueError(
+                    f"existing registry already has duplicate Skill {name!r}: "
+                    f"{existing[name]} and {identifier}"
+                )
+            existing[name] = identifier
+    return existing
+
+
+def download_bytes(locator: str) -> bytes:
+    """Download one registry archive, falling back to curl for TLS flakiness."""
+    request = urllib.request.Request(locator, headers={"User-Agent": "ora-top-skills-build/1"})
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return response.read()
+    except OSError:
+        result = subprocess.run(
+            ["curl", "-fsSL", "--retry", "3", "--max-time", "60", locator],
+            capture_output=True,
+        )
+        if result.returncode != 0:
+            message = result.stderr.decode("utf-8", "replace").strip()
+            raise ValueError(f"download {locator} failed: {message}")
+        return result.stdout
+
+
+def assert_no_duplicate_skills(
+    results: list[tuple[dict, str, Path, str]], registry_root: Path
+) -> None:
+    """Refuse packages whose Skill names collide within the batch or with existing registry."""
+    published = existing_skill_names(registry_root)
+    current: dict[str, str] = {}
+    for package, skill_name, _archive_path, _digest in results:
+        canonical = skill_name.lower()
+        identifier = package["identifier"]
+        if canonical in published:
+            raise ValueError(
+                f"{identifier}: Skill {skill_name!r} duplicates existing package {published[canonical]}"
+            )
+        if canonical in current:
+            raise ValueError(
+                f"{identifier}: Skill {skill_name!r} duplicates package {current[canonical]}"
+            )
+        current[canonical] = identifier
+
+
 def check_all(packages: list[dict], results: list[tuple[dict, str, Path, str]], registry_root: Path) -> None:
     """Verify committed archive bytes and registry digests."""
     for package, _skill_name, archive_path, digest in results:
@@ -303,7 +427,7 @@ def check_all(packages: list[dict], results: list[tuple[dict, str, Path, str]], 
         actual = hashlib.sha256(committed.read_bytes()).hexdigest()
         if actual != digest:
             raise ValueError(f"archive is stale: {committed} ({actual} != {digest})")
-        listing = registry_root / package["slug"] / "orax.toml"
+        listing = registry_root / "t" / package["identifier"] / "orax.toml"
         if not listing.is_file():
             raise ValueError(f"registry listing is missing: {listing}")
         release = tomllib.loads(listing.read_text(encoding="utf-8"))
@@ -319,7 +443,7 @@ def check_all(packages: list[dict], results: list[tuple[dict, str, Path, str]], 
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, default=ROOT / "dist")
-    parser.add_argument("--registry-root", type=Path, default=ROOT.parents[1] / "registry" / "t" / "top-skills")
+    parser.add_argument("--registry-root", type=Path, default=ROOT.parents[1] / "registry")
     parser.add_argument("--write-registry", action="store_true")
     parser.add_argument("--registry-base")
     parser.add_argument("--check", action="store_true")
@@ -331,9 +455,11 @@ def main(argv: list[str]) -> int:
 
     packages = load_catalog()
     results = build_all(packages, args.out)
+    if args.write_registry or args.check:
+        assert_no_duplicate_skills(results, args.registry_root)
     if args.write_registry:
         for package, skill_name, _archive_path, digest in results:
-            write_registry(package, skill_name, digest, args.registry_root, args.registry_base)
+            write_registry(package, skill_name, digest, args.registry_root / "t", args.registry_base)
     if args.check:
         check_all(packages, results, args.registry_root)
         print(f"verified {len(results)} packages")
