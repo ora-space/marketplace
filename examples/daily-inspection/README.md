@@ -18,8 +18,9 @@ ships no credentials, model IDs, or deployment-specific configuration.
 | 汇总风险与巡检报告 | Produces the complete Markdown report in the final assistant response. |
 | 输出 | Exposes the report as the workflow result. |
 
-The agent uses the implicit `default` executor slot. The workflow never edits
-files, changes configuration, or attempts a repair.
+The agent nodes use the implicit `default` executor slot and bind
+`official/ora-space.opencode`; they do not pin a model or ship credentials.
+The workflow never edits files, changes configuration, or attempts a repair.
 
 ## Requirements
 
