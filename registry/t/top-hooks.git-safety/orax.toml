@@ -1,0 +1,34 @@
+resolver = 1
+title = "Git Safety"
+identifier = "top-hooks.git-safety"
+namespace = "official"
+kind = "hook"
+version = "1.0.0"
+description = "Block force pushes to protected branches, destructive branch operations, and destructive GitHub CLI actions. From karanb192/claude-code-hooks."
+homepage = "https://github.com/karanb192/claude-code-hooks"
+license = "MIT"
+
+[[targets]]
+target = "aarch64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.git-safety-1.0.0-aarch64-apple-darwin.orax"
+sha256 = "63d61554c7257758518d531a344a23efe52e013064a48dcbae1306e9fc91d244"
+
+[[targets]]
+target = "aarch64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.git-safety-1.0.0-aarch64-unknown-linux-gnu.orax"
+sha256 = "6cdddd648d7312dd411b5e5625e8374888fd06466e5d9849ae57aa120dc62e61"
+
+[[targets]]
+target = "x86_64-apple-darwin"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.git-safety-1.0.0-x86_64-apple-darwin.orax"
+sha256 = "bc06b66eb16f1ec7b97cc97e90f5eb98dc99f72974b51458bd13cd64fc3f2f90"
+
+[[targets]]
+target = "x86_64-pc-windows-msvc"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.git-safety-1.0.0-x86_64-pc-windows-msvc.orax"
+sha256 = "1f14b8013e80a16cec693a29ca472c374a8167da318598d5790374042c15a473"
+
+[[targets]]
+target = "x86_64-unknown-linux-gnu"
+url = "https://raw.githubusercontent.com/ora-space/marketplace/2f3d602091d7ad7ed1e026ce87087523927bfdf9/examples/top-hooks/dist/top-hooks.git-safety-1.0.0-x86_64-unknown-linux-gnu.orax"
+sha256 = "101f01619a863425f91b3e1aaeaf40cbb1aa05a95d0b27915a91bfaa7f0102ee"
