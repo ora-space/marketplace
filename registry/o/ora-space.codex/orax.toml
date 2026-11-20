@@ -3,27 +3,27 @@ title = "Codex"
 identifier = "ora-space.codex"
 namespace = "official"
 kind = "agent"
-version = "0.3.14"
+version = "0.3.20"
 description = "Ora Space Codex Agent"
 homepage = "https://github.com/ora-space/codex-agent"
 license = "Apache-2.0"
 
 [[targets]]
 target = "x86_64-pc-windows-msvc"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-x86_64-pc-windows-msvc.orax"
-sha256 = "1ec90aed062f130ad29d2886ae86bcfb3742b987346d960306d672135d16fbc6"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.20/ora-space.codex-v0.3.20-x86_64-pc-windows-msvc.orax"
+sha256 = "44dda258e126087bb69c3d390227b2d71cba0fbbb12a71d518aeb865a4e376b7"
 
 [[targets]]
 target = "aarch64-apple-darwin"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-aarch64-apple-darwin.orax"
-sha256 = "d67c234f96aaf23fd3271201481b8a8e581f1b6e8e373c592ad4494ed5e1b362"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.20/ora-space.codex-v0.3.20-aarch64-apple-darwin.orax"
+sha256 = "429c13e43e41532072bfb1456873c7db4d5b1ac36f4482f44e30a2fe57ba04c7"
 
 [[targets]]
 target = "x86_64-unknown-linux-gnu"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-x86_64-unknown-linux-gnu.orax"
-sha256 = "a32b463a1a677e932bf1eca075bf8def0aa4a5254e2c42e459e180bd601d8b03"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.20/ora-space.codex-v0.3.20-x86_64-unknown-linux-gnu.orax"
+sha256 = "8fcbf727f9ba38b85a58028ff877b18cbce31d888d0b2337a1540247a187ce9b"
 
 [[targets]]
 target = "aarch64-unknown-linux-gnu"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-aarch64-unknown-linux-gnu.orax"
-sha256 = "75384d334795204bb846db770ea6d71e2b790418ad90c0832198108922f8185f"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.20/ora-space.codex-v0.3.20-aarch64-unknown-linux-gnu.orax"
+sha256 = "3bb26d4e1eabd86b18abd786ef340acfd645d6845323362b2a6c27c81a529892"
