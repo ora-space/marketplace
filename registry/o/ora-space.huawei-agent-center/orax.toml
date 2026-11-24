@@ -1,0 +1,27 @@
+resolver = 1
+title = "Huawei Agent Center"
+identifier = "ora-space.huawei-agent-center"
+namespace = "official"
+kind = "webview"
+version = "0.1.0"
+description = "Ora Space Huawei Agent Center surface"
+homepage = "https://github.com/ora-space/ui-plugins"
+license = "Apache-2.0"
+url = "https://github.com/ora-space/ui-plugins/releases/download/huawei-agent-center/v0.1.0/ora-space.huawei-agent-center-v0.1.0.orax"
+sha256 = "c77d87151cffee9ac65b8ac0ef55f0d1ac314500a4ab762dde06e8c17afa4bda"
+
+[webview]
+start_url = "https://ai.edevops.huawei.com/mcp/projects/skill"
+allowed_origins = ["https://ai.edevops.huawei.com","https://login.huawei.com"]
+
+[webview.downloads.fallback]
+reject = true
+
+[[webview.downloads.rules]]
+
+[webview.downloads.rules.page]
+origin = "https://ai.edevops.huawei.com"
+path_prefix = "/"
+
+[webview.downloads.rules.action]
+prompt = ["import_skill","save_as"]
