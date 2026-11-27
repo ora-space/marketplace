@@ -3,27 +3,27 @@ title = "Codex"
 identifier = "ora-space.codex"
 namespace = "official"
 kind = "agent"
-version = "0.3.14"
+version = "0.3.24"
 description = "Ora Space Codex Agent"
 homepage = "https://github.com/ora-space/codex-agent"
 license = "Apache-2.0"
 
 [[targets]]
 target = "x86_64-pc-windows-msvc"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-x86_64-pc-windows-msvc.orax"
-sha256 = "1ec90aed062f130ad29d2886ae86bcfb3742b987346d960306d672135d16fbc6"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.24/ora-space.codex-v0.3.24-x86_64-pc-windows-msvc.orax"
+sha256 = "7b338dfb0db0338e90f1226bfcd277b82362773eaa6970c07c3265293fc9a249"
 
 [[targets]]
 target = "aarch64-apple-darwin"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-aarch64-apple-darwin.orax"
-sha256 = "d67c234f96aaf23fd3271201481b8a8e581f1b6e8e373c592ad4494ed5e1b362"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.24/ora-space.codex-v0.3.24-aarch64-apple-darwin.orax"
+sha256 = "224f51a47b1353113de34fbddcd2032d4a64f7e17365795eee2d871dc1ef2af8"
 
 [[targets]]
 target = "x86_64-unknown-linux-gnu"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-x86_64-unknown-linux-gnu.orax"
-sha256 = "a32b463a1a677e932bf1eca075bf8def0aa4a5254e2c42e459e180bd601d8b03"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.24/ora-space.codex-v0.3.24-x86_64-unknown-linux-gnu.orax"
+sha256 = "4d633cc0eec6c1ec3509b647d5dec9ac213b1a1dd8c08ee81bf437f516597af3"
 
 [[targets]]
 target = "aarch64-unknown-linux-gnu"
-url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.14/ora-space.codex-v0.3.14-aarch64-unknown-linux-gnu.orax"
-sha256 = "75384d334795204bb846db770ea6d71e2b790418ad90c0832198108922f8185f"
+url = "https://github.com/ora-space/codex-agent/releases/download/v0.3.24/ora-space.codex-v0.3.24-aarch64-unknown-linux-gnu.orax"
+sha256 = "260c8a7f3415e13488af9214309ead0be9071c64019bee4379dbe7f1e9118310"
